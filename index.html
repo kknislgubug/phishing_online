@@ -1,223 +1,155 @@
 <!doctype html>
 <html lang="id">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Awas Klik — KKN ISL Gubug UKDW 2026</title>
-    <meta name="description" content="Website edukasi phishing yang ramah low vision untuk KKN ISL Gubug UKDW 2026." />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <a class="skip-link" href="#main">Lewati ke konten</a>
-    <div class="reading-progress" aria-hidden="true"><span id="readingProgress"></span></div>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Awas Klik — KKN ISL Gubug UKDW 2026</title>
+  <meta name="description" content="Website edukasi phishing yang sederhana, interaktif, dan ramah low vision." />
+  <link rel="icon" href="assets/favicon.png" />
+  <style>
+    :root{
+      --bg:#fffdf7;--card:#fff;--ink:#101827;--muted:#4a5568;--blue:#073b78;--blue-dark:#052b5b;--purple:#7030a0;--yellow:#ffd84d;--line:#d6e0ee;--green:#137333;--red:#b42318;--shadow:0 24px 70px rgba(7,59,120,.15);--radius:28px;--focus:0 0 0 5px rgba(255,216,77,.95),0 0 0 9px rgba(7,59,120,.45)
+    }
+    *{box-sizing:border-box}html{scroll-behavior:smooth;font-size:19px}body{margin:0;color:var(--ink);background:radial-gradient(circle at 10% 12%,rgba(255,216,77,.28),transparent 25rem),radial-gradient(circle at 88% 20%,rgba(112,48,160,.12),transparent 28rem),linear-gradient(180deg,var(--bg),#f8fbff 50%,var(--bg));font-family:Arial,Helvetica,sans-serif;line-height:1.6}button,input,a{font:inherit}button{cursor:pointer}a{color:inherit}button:focus-visible,a:focus-visible,input:focus-visible{outline:none;box-shadow:var(--focus)}.skip-link{position:fixed;left:12px;top:12px;z-index:9999;transform:translateY(-180%);background:var(--yellow);color:#111827;padding:12px 18px;border-radius:999px;font-weight:900;text-decoration:none}.skip-link:focus{transform:translateY(0)}.reading-progress{position:fixed;top:0;left:0;z-index:900;width:100%;height:6px;background:#e7eef8}.reading-progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--yellow),var(--purple),var(--blue))}
+    .site-header{position:sticky;top:0;z-index:700;background:rgba(255,253,247,.97);border-bottom:1px solid var(--line);backdrop-filter:blur(14px);padding:16px clamp(12px,4vw,58px) 10px}.header-inner{width:min(1220px,100%);margin:0 auto;display:flex;align-items:center;justify-content:center}.brand{display:inline-flex;align-items:center;gap:12px;text-decoration:none;color:var(--blue)}.brand-icon{display:grid;place-items:center;width:54px;height:54px;border-radius:18px;background:var(--yellow);color:#111827;box-shadow:inset 0 -8px rgba(0,0,0,.14),0 12px 26px rgba(255,216,77,.35);font-size:1.55rem;font-weight:1000;animation:pulseMark 2.6s ease-in-out infinite}.brand strong,.brand small{display:block;line-height:1.15}.brand strong{font-size:1.15rem}.brand small{color:var(--muted);font-size:.78rem;font-weight:900}.main-nav{width:min(1220px,100%);margin:12px auto 0;display:flex;justify-content:center;gap:10px;overflow-x:auto;padding:2px 0 5px;scrollbar-width:thin}.main-nav a{flex:0 0 auto;min-height:48px;display:inline-flex;align-items:center;justify-content:center;padding:10px 18px;border-radius:999px;color:var(--blue);font-weight:1000;text-decoration:none;white-space:nowrap}.main-nav a:hover,.main-nav a.active{color:#fff;background:var(--blue)}
+    .section-shell{width:min(1220px,calc(100% - 34px));margin:0 auto}.hero{min-height:calc(100vh - 125px);display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,.85fr);gap:clamp(28px,6vw,76px);align-items:center;padding:clamp(44px,7vw,86px) 0 54px}.eyebrow{display:inline-flex;align-items:center;gap:10px;margin:0 0 14px;color:var(--purple);font-size:.9rem;font-weight:1000;letter-spacing:.08em;text-transform:uppercase}.eyebrow span{width:22px;height:22px;border-radius:999px;background:var(--yellow);box-shadow:0 0 0 8px rgba(255,216,77,.22)}h1,h2,h3,p{margin-top:0}h1,h2,h3{color:var(--blue);line-height:1.06;letter-spacing:-.04em}h1{max-width:760px;margin-bottom:18px;font-size:clamp(3.3rem,7vw,5.8rem)}h2{margin-bottom:14px;font-size:clamp(2rem,4.2vw,3.35rem)}h3{font-size:clamp(1.35rem,2.5vw,2rem)}.lead{max-width:660px;color:var(--muted);font-size:clamp(1.15rem,2vw,1.45rem);font-weight:700}.hero-actions,.sim-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:24px}.btn,.decision-btn{min-height:62px;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:15px 24px;border:3px solid transparent;border-radius:18px;font-weight:1000;text-decoration:none}.primary{color:#fff;background:linear-gradient(135deg,var(--blue),var(--purple));box-shadow:0 13px 28px rgba(112,48,160,.25)}.secondary{color:var(--blue);border-color:var(--blue);background:#fff}.btn:hover,.decision-btn:hover,.choice-grid button:hover,.quiz-choice:hover{transform:translateY(-2px)}.rule-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:30px;max-width:720px}.rule-strip div{display:flex;align-items:center;gap:12px;min-height:76px;padding:14px 16px;border:2px solid var(--line);border-radius:20px;background:rgba(255,255,255,.84)}.rule-strip strong{display:grid;place-items:center;width:42px;height:42px;border-radius:999px;color:#fff;background:var(--blue)}.rule-strip span{font-weight:900;color:var(--blue)}
+    .phone-wrap{position:relative;min-height:500px;display:grid;place-items:center}.phone{width:min(360px,82vw);border:20px solid #07182f;border-radius:42px;padding:22px;background:#f4f8ff;box-shadow:var(--shadow);transform:rotate(-2deg);animation:phoneFloat 4s ease-in-out infinite}.speaker{width:104px;height:12px;margin:0 auto 20px;border-radius:999px;background:#8a99aa}.screen{position:relative;overflow:hidden;display:grid;gap:16px;min-height:340px;padding:20px;border-radius:28px;background:#fff}.scan-line{position:absolute;inset:0;width:100%;height:90px;background:linear-gradient(180deg,transparent,rgba(255,216,77,.35),transparent);animation:scanMove 3s linear infinite}.message{position:relative;z-index:1;padding:14px 16px;border:2px solid var(--line);border-radius:20px;background:#fff;box-shadow:0 10px 24px rgba(7,59,120,.08);animation:bubbleIn .7s ease both}.message small{display:block;color:var(--muted);font-weight:800}.message strong{display:block;color:var(--blue);font-size:1.1rem}.danger-message{border-color:rgba(180,35,24,.35)}.warning-message{border-color:rgba(255,216,77,.75);animation-delay:.25s}.safe-message{border-color:rgba(19,115,51,.35);animation-delay:.5s}.bubble-tag{position:absolute;display:inline-flex;min-height:52px;align-items:center;justify-content:center;padding:10px 18px;border:3px solid var(--blue);border-radius:999px;color:var(--blue);background:var(--yellow);font-weight:1000;box-shadow:var(--shadow);animation:tagFloat 3s ease-in-out infinite}.tag-one{left:2%;top:20%}.tag-two{right:0;top:42%;animation-delay:.3s}.tag-three{left:9%;bottom:12%;background:#fff;animation-delay:.6s}
+    .compact-section{padding:clamp(48px,8vw,92px) 0}.section-heading{max-width:780px;margin-bottom:26px}.section-heading p{color:var(--muted);font-size:1.12rem;font-weight:700}.story-card,.danger-layout,.sim-grid,.checker-grid,.quiz-card,.final-card{border:2px solid var(--line);border-radius:var(--radius);background:rgba(255,255,255,.9);box-shadow:var(--shadow)}.story-card{display:grid;grid-template-columns:.9fr 1.1fr;gap:22px;padding:clamp(20px,4vw,34px)}.story-message{min-height:270px;padding:24px;border-radius:24px;background:linear-gradient(135deg,#eef6ff,#fff8d8)}.story-message small{color:var(--purple);font-weight:1000}.story-message p{color:var(--ink);font-weight:800}.choice-grid{display:grid;gap:14px;align-content:start}.choice-grid button,.quiz-choice{min-height:66px;padding:14px 18px;border:3px solid var(--blue);border-radius:18px;color:var(--blue);background:#fff;font-weight:1000;text-align:left}.choice-grid button.is-selected,.choice-grid button.good-selected,.quiz-choice.good-selected{color:#fff;background:var(--blue)}.choice-grid button.bad-selected,.quiz-choice.bad-selected{color:#fff;background:#8f1d16;border-color:#8f1d16}.danger-layout{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;padding:clamp(20px,4vw,34px)}.big-chat{padding:24px;border-radius:24px;background:#f8fbff}.sender{display:flex;justify-content:space-between;gap:12px;margin-bottom:18px;color:var(--blue)}.sender span{color:var(--muted);font-weight:800}.big-chat p{font-size:1.2rem;font-weight:800}.hotspot{display:inline-flex;min-height:48px;margin:3px 4px;padding:8px 12px;border:3px solid var(--blue);border-radius:14px;color:#111827;background:var(--yellow);font-weight:1000}.info-box{padding:24px;border:3px solid var(--yellow);border-radius:24px;background:#fffdf1}.info-box strong{color:var(--blue);font-size:1.35rem}.info-box p{margin:10px 0 0;font-weight:800}.sim-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;padding:clamp(20px,4vw,34px)}.chat-sim{padding:22px;border-radius:24px;background:#f8fbff}.chat-bubble{max-width:480px;padding:20px;border:3px solid var(--yellow);border-radius:26px 26px 26px 8px;background:#fff}.chat-bubble small{color:var(--muted);font-weight:900}.chat-bubble p{margin:8px 0 0;color:var(--blue);font-size:1.24rem;font-weight:1000}.risk-meter{margin-top:22px}.risk-meter span{color:var(--muted);font-weight:900}.risk-meter div{height:22px;overflow:hidden;margin:8px 0;border-radius:999px;background:#e6edf7}.risk-meter i{display:block;width:0;height:100%;border-radius:999px;background:linear-gradient(90deg,var(--green),var(--yellow),var(--red));transition:width .4s ease}.risk-meter strong{color:var(--blue)}.sim-actions{margin:0;align-content:start}.decision-btn{width:100%;color:var(--blue);border-color:var(--blue);background:#fff;text-align:center}.decision-btn.good{border-color:var(--green)}.checker-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;padding:clamp(20px,4vw,34px)}.checker-box{display:grid;gap:14px;padding:22px;border-radius:24px;background:#f8fbff}.checker-box span{color:var(--blue);font-size:1.35rem;font-weight:1000}.checker-box input{min-height:62px;width:100%;padding:12px 16px;border:3px solid var(--line);border-radius:18px;color:var(--ink);background:#fff}.checker-box output{min-height:78px;display:block;padding:16px;border-radius:18px;background:#fff;font-weight:800}.quiz-card{padding:clamp(20px,4vw,34px)}.quiz-top{display:flex;justify-content:space-between;gap:16px;margin-bottom:18px;color:var(--blue)}.quiz-top strong{font-size:clamp(1.35rem,3vw,2rem)}.quiz-top span{flex:0 0 auto;font-weight:1000}.quiz-feedback{margin:18px 0 0;padding:16px;border-radius:18px;background:#f8fbff;font-weight:800}.final-section{padding:clamp(48px,8vw,92px) 0}.final-card{padding:clamp(26px,5vw,52px);text-align:center;background:linear-gradient(135deg,#fff8d8,#eef6ff)}.emergency-list{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:28px 0;text-align:left}.emergency-list div{padding:18px;border:2px solid var(--line);border-radius:22px;background:#fff}.emergency-list strong{display:grid;place-items:center;width:44px;height:44px;margin-bottom:10px;border-radius:999px;color:#fff;background:var(--blue)}.emergency-list span{color:var(--blue);font-weight:1000}.help-float{position:fixed;right:18px;bottom:18px;z-index:650;min-height:66px;padding:16px 24px;border:4px solid var(--yellow);border-radius:999px;color:#fff;background:var(--purple);font-weight:1000;box-shadow:var(--shadow)}.site-footer{margin-top:24px;padding:34px clamp(18px,5vw,72px);color:var(--blue);background:#fff;border-top:1px solid var(--line);text-align:center}.site-footer p{max-width:900px;margin:10px auto 0;color:var(--muted);font-weight:700}.toast{position:fixed;left:50%;bottom:102px;z-index:800;width:min(680px,calc(100% - 32px));padding:18px 20px;border:3px solid var(--blue);border-radius:20px;color:var(--blue);background:#fff;box-shadow:var(--shadow);font-weight:900;transform:translate(-50%,160%);opacity:0;transition:.25s ease}.toast.show{transform:translate(-50%,0);opacity:1}
+    @keyframes pulseMark{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}@keyframes phoneFloat{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-14px) rotate(1deg)}}@keyframes scanMove{0%{transform:translateY(-100%)}100%{transform:translateY(420%)}}@keyframes bubbleIn{from{opacity:0;transform:translateY(14px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}@keyframes tagFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+    @media(max-width:1050px){.hero,.story-card,.danger-layout,.sim-grid,.checker-grid{grid-template-columns:1fr}.phone-wrap{min-height:450px}.emergency-list{grid-template-columns:repeat(2,1fr)}}@media(max-width:640px){html{font-size:17px}.site-header{padding:12px 10px 8px}.brand-icon{width:48px;height:48px}.main-nav{justify-content:flex-start;padding-bottom:8px}.main-nav a{min-height:46px;padding:9px 16px}.section-shell{width:min(100% - 24px,1220px)}.hero{padding-top:34px;min-height:auto}h1{font-size:clamp(2.55rem,16vw,4.1rem)}h2{font-size:clamp(2rem,10vw,2.8rem)}.lead{font-size:1.13rem}.hero-actions{flex-direction:column}.btn{width:100%}.rule-strip{grid-template-columns:1fr}.phone-wrap{min-height:390px;overflow:hidden}.phone{width:min(310px,87vw);border-width:16px;padding:18px}.screen{min-height:280px;padding:16px}.bubble-tag{min-height:46px;padding:8px 13px}.tag-one{left:0;top:11%}.tag-two{right:0;top:35%}.tag-three{left:4%;bottom:8%}.story-message{min-height:auto}.sender{display:block}.hotspot{width:100%;justify-content:center;margin:7px 0}.quiz-top{display:block}.quiz-top span{display:inline-block;margin-top:10px}.emergency-list{grid-template-columns:1fr}.help-float{right:12px;left:12px;bottom:12px;min-height:58px;width:calc(100% - 24px)}.toast{bottom:84px}}
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Lewati ke konten</a>
+  <div class="reading-progress" aria-hidden="true"><span id="readingProgress"></span></div>
 
-    <header class="site-header" id="top">
-      <div class="header-main">
-        <a class="brand" href="#hero" aria-label="Kembali ke awal halaman Awas Klik">
-          <span class="brand-icon" aria-hidden="true">!</span>
-          <span class="brand-text">
-            <strong>Awas Klik</strong>
-            <small>STOP • CEK • TANYA</small>
-          </span>
-        </a>
+  <header class="site-header" id="top">
+    <div class="header-inner">
+      <a class="brand" href="#hero" aria-label="Kembali ke awal halaman Awas Klik">
+        <span class="brand-icon" aria-hidden="true">!</span>
+        <span class="brand-text"><strong>Awas Klik</strong><small>STOP • CEK • TANYA</small></span>
+      </a>
+    </div>
+    <nav class="main-nav" aria-label="Navigasi utama">
+      <a href="#cerita">Cerita</a>
+      <a href="#bahaya">Bahaya</a>
+      <a href="#simulasi">Simulasi</a>
+      <a href="#cek">Cek Aman</a>
+      <a href="#kuis">Kuis</a>
+      <a href="#darurat">Darurat</a>
+    </nav>
+  </header>
 
-      </div>
-
-      <nav class="main-nav" aria-label="Navigasi utama">
-        <a href="#cerita">Cerita</a>
-        <a href="#bahaya">Bahaya</a>
-        <a href="#simulasi">Simulasi</a>
-        <a href="#cek">Cek Aman</a>
-        <a href="#kuis">Kuis</a>
-        <a href="#darurat">Darurat</a>
-      </nav>
-    </header>
-
-    <main id="main">
-      <section class="hero section-shell" id="hero" aria-labelledby="heroTitle">
-        <div class="hero-text reveal">
-          <p class="eyebrow"><span></span> KKN ISL Gubug UKDW 2026</p>
-          <h1 id="heroTitle">Tahan. Lihat. Tanya.</h1>
-          <p class="lead">Belajar mengenali penipuan online dengan tampilan besar, jelas, dan mudah dibaca.</p>
-
-          <div class="hero-actions">
-            <a class="btn primary" href="#simulasi">Mulai simulasi</a>
-            <a class="btn secondary" href="#darurat">Butuh bantuan?</a>
-          </div>
-
-          <div class="rule-strip" aria-label="Rumus aman">
-            <div><strong>1</strong><span>Tahan dulu</span></div>
-            <div><strong>2</strong><span>Cek pesan</span></div>
-            <div><strong>3</strong><span>Tanya orang terpercaya</span></div>
-          </div>
+  <main id="main">
+    <section class="hero section-shell" id="hero" aria-labelledby="heroTitle">
+      <div class="hero-text">
+        <p class="eyebrow"><span></span> KKN ISL Gubug UKDW 2026</p>
+        <h1 id="heroTitle">Tahan. Lihat. Tanya.</h1>
+        <p class="lead">Belajar mengenali penipuan online dengan tampilan besar, jelas, dan mudah dibaca.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#simulasi">Mulai simulasi</a>
+          <a class="btn secondary" href="#darurat">Butuh bantuan?</a>
         </div>
-
-        <div class="phone-wrap reveal" aria-label="Ilustrasi pesan mencurigakan" role="img">
-          <div class="phone">
-            <div class="speaker" aria-hidden="true"></div>
-            <div class="screen">
-              <div class="scan-line" aria-hidden="true"></div>
-              <div class="message danger-message">
-                <small>Nomor tidak dikenal</small>
-                <strong>Undangan Nikah.apk</strong>
-              </div>
-              <div class="message warning-message">
-                <small>Pesan mendesak</small>
-                <strong>Klik sekarang!</strong>
-              </div>
-              <div class="message safe-message">
-                <small>Langkah aman</small>
-                <strong>STOP • CEK • TANYA</strong>
-              </div>
-            </div>
-          </div>
-          <span class="bubble-tag tag-one">APK?</span>
-          <span class="bubble-tag tag-two">OTP?</span>
-          <span class="bubble-tag tag-three">CEK DULU</span>
-        </div>
-      </section>
-
-      <section class="section-shell compact-section" id="cerita" aria-labelledby="ceritaTitle">
-        <div class="section-heading reveal">
-          <p class="eyebrow"><span></span> Cerita singkat</p>
-          <h2 id="ceritaTitle">Sari mendapat pesan aneh.</h2>
-          <p>Tekan pilihan. Lihat akibatnya langsung.</p>
-        </div>
-
-        <div class="story-card reveal">
-          <div class="story-message" aria-live="polite">
-            <small id="storyStep">Langkah 1 dari 3</small>
-            <h3 id="storyQuestion">Ada file “Undangan Nikah.apk”. Apa yang paling aman?</h3>
-            <p id="storyFeedback">Pilih satu jawaban untuk memulai cerita.</p>
-          </div>
-          <div class="choice-grid" id="storyChoices"></div>
-        </div>
-      </section>
-
-      <section class="section-shell compact-section" id="bahaya" aria-labelledby="bahayaTitle">
-        <div class="section-heading reveal">
-          <p class="eyebrow"><span></span> Tanda bahaya</p>
-          <h2 id="bahayaTitle">Tekan bagian mencurigakan.</h2>
-          <p>Setiap kotak menjelaskan risiko dengan bahasa sederhana.</p>
-        </div>
-
-        <div class="danger-layout reveal">
-          <article class="big-chat">
-            <div class="sender"><strong>Nomor Baru</strong><span>+62 812-0000-XXXX</span></div>
-            <p>
-              Selamat! Anda mendapat hadiah. Klik
-              <button class="hotspot" type="button" data-info="Link pendek bisa menyembunyikan alamat asli. Jangan klik sebelum cek sumber resmi.">bit.ly/hadiah-cepat</button>
-              lalu masukkan
-              <button class="hotspot" type="button" data-info="OTP adalah kunci akun. Jangan berikan ke siapa pun, termasuk orang yang mengaku petugas.">kode OTP</button>
-              dalam
-              <button class="hotspot" type="button" data-info="Batas waktu palsu dipakai agar korban panik dan tidak sempat berpikir.">5 menit</button>.
-            </p>
-          </article>
-
-          <aside class="info-box" id="hotspotInfo" aria-live="polite">
-            <strong>Penjelasan muncul di sini.</strong>
-            <p>Tekan kotak berwarna kuning pada pesan.</p>
-          </aside>
-        </div>
-      </section>
-
-      <section class="section-shell compact-section" id="simulasi" aria-labelledby="simTitle">
-        <div class="section-heading reveal">
-          <p class="eyebrow"><span></span> Simulasi</p>
-          <h2 id="simTitle">Apa keputusanmu?</h2>
-          <p>Pilih tindakan, lalu lihat tingkat risikonya.</p>
-        </div>
-
-        <div class="sim-grid reveal">
-          <div class="chat-sim">
-            <div class="chat-bubble suspicious">
-              <small>WA tidak dikenal</small>
-              <p>Bu, paket gagal dikirim. Buka file Resi_Paket.apk.</p>
-            </div>
-            <div class="risk-meter" aria-label="Meter risiko">
-              <span>Risiko</span>
-              <div><i id="riskFill"></i></div>
-              <strong id="riskText">Belum dipilih</strong>
-            </div>
-          </div>
-
-          <div class="sim-actions">
-            <button class="decision-btn" type="button" data-risk="90" data-message="Sangat berisiko. File APK dari orang tidak dikenal bisa mencuri data dan akun.">Buka file</button>
-            <button class="decision-btn" type="button" data-risk="70" data-message="Masih berisiko. Membalas bisa membuat penipu tahu nomor aktif.">Balas pesan</button>
-            <button class="decision-btn good" type="button" data-risk="10" data-message="Pilihan aman. Hapus pesan, blokir nomor, lalu tanya ke kanal resmi.">Hapus & blokir</button>
-          </div>
-        </div>
-      </section>
-
-      <section class="section-shell compact-section" id="cek" aria-labelledby="cekTitle">
-        <div class="section-heading reveal">
-          <p class="eyebrow"><span></span> Cek aman</p>
-          <h2 id="cekTitle">Cek sebelum klik.</h2>
-          <p>Masukkan contoh link atau nama file. Hasilnya hanya panduan sederhana.</p>
-        </div>
-
-        <div class="checker-grid reveal">
-          <label class="checker-box">
-            <span>Cek link</span>
-            <input id="linkInput" type="text" placeholder="contoh: bit.ly/hadiah" autocomplete="off" />
-            <button class="btn primary" type="button" id="linkBtn">Cek link</button>
-            <output id="linkResult">Hasil cek link akan muncul di sini.</output>
-          </label>
-
-          <label class="checker-box">
-            <span>Cek file</span>
-            <input id="fileInput" type="text" placeholder="contoh: undangan.apk" autocomplete="off" />
-            <button class="btn primary" type="button" id="fileBtn">Cek file</button>
-            <output id="fileResult">Hasil cek file akan muncul di sini.</output>
-          </label>
-        </div>
-      </section>
-
-      <section class="section-shell compact-section" id="kuis" aria-labelledby="quizTitle">
-        <div class="section-heading reveal">
-          <p class="eyebrow"><span></span> Kuis cepat</p>
-          <h2 id="quizTitle">Pilih jawaban aman.</h2>
-          <p>Skor muncul langsung setelah memilih.</p>
-        </div>
-
-        <div class="quiz-card reveal">
-          <div class="quiz-top">
-            <strong id="quizQuestion">Memuat pertanyaan...</strong>
-            <span id="quizScore">Skor 0</span>
-          </div>
-          <div class="choice-grid" id="quizChoices"></div>
-          <p class="quiz-feedback" id="quizFeedback" aria-live="polite">Jawab pertanyaan pertama.</p>
-        </div>
-      </section>
-
-      <section class="section-shell final-section" id="darurat" aria-labelledby="daruratTitle">
-        <div class="final-card reveal">
-          <p class="eyebrow"><span></span> Langkah darurat</p>
-          <h2 id="daruratTitle">Kalau sudah terlanjur klik.</h2>
-          <div class="emergency-list">
-            <div><strong>1</strong><span>Matikan internet.</span></div>
-            <div><strong>2</strong><span>Ganti password.</span></div>
-            <div><strong>3</strong><span>Hubungi bank atau pihak resmi.</span></div>
-            <div><strong>4</strong><span>Ceritakan ke keluarga/guru/petugas.</span></div>
-          </div>
-          <a class="btn primary" href="#top">Kembali ke atas</a>
-        </div>
-      </section>
-    </main>
-
-    <button class="help-float" type="button" id="helpBtn">Butuh petunjuk?</button>
-
-    <footer class="site-footer" id="footer">
-      <div class="footer-brand text-only-footer">
-        <div>
-          <strong>KKN ISL Gubug UKDW 2026</strong>
-          <p>Website edukasi “Awas Klik” untuk membantu masyarakat mengenali penipuan online.</p>
+        <div class="rule-strip" aria-label="Rumus aman">
+          <div><strong>1</strong><span>Tahan dulu</span></div>
+          <div><strong>2</strong><span>Cek pesan</span></div>
+          <div><strong>3</strong><span>Tanya orang terpercaya</span></div>
         </div>
       </div>
-      <p class="footer-note">Didesain dengan prinsip low vision: teks besar, kontras tinggi, tombol lebar, jarak lega, dan tampilan sederhana.</p>
-    </footer>
+      <div class="phone-wrap" aria-label="Ilustrasi pesan mencurigakan" role="img">
+        <div class="phone"><div class="speaker" aria-hidden="true"></div><div class="screen"><div class="scan-line" aria-hidden="true"></div><div class="message danger-message"><small>Nomor tidak dikenal</small><strong>Undangan Nikah.apk</strong></div><div class="message warning-message"><small>Pesan mendesak</small><strong>Klik sekarang!</strong></div><div class="message safe-message"><small>Langkah aman</small><strong>STOP • CEK • TANYA</strong></div></div></div>
+        <span class="bubble-tag tag-one">APK?</span><span class="bubble-tag tag-two">OTP?</span><span class="bubble-tag tag-three">CEK DULU</span>
+      </div>
+    </section>
 
-    <div class="toast" id="toast" role="status" aria-live="polite"></div>
-    <script src="script.js"></script>
-  </body>
+    <section class="section-shell compact-section" id="cerita" aria-labelledby="ceritaTitle">
+      <div class="section-heading"><p class="eyebrow"><span></span> Cerita singkat</p><h2 id="ceritaTitle">Sari mendapat pesan aneh.</h2><p>Tekan pilihan. Lihat akibatnya langsung.</p></div>
+      <div class="story-card">
+        <div class="story-message" aria-live="polite"><small id="storyStep">Langkah 1 dari 3</small><h3 id="storyQuestion">Ada file “Undangan Nikah.apk”. Apa yang paling aman?</h3><p id="storyFeedback">Pilih satu jawaban untuk memulai cerita.</p></div>
+        <div class="choice-grid" id="storyChoices">
+          <button type="button" data-story-choice="bad">Buka file karena penasaran</button>
+          <button type="button" data-story-choice="good">Hapus pesan dan tanya orang yang dikenal</button>
+          <button type="button" data-story-choice="bad">Teruskan ke grup keluarga</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-shell compact-section" id="bahaya" aria-labelledby="bahayaTitle">
+      <div class="section-heading"><p class="eyebrow"><span></span> Tanda bahaya</p><h2 id="bahayaTitle">Tekan bagian mencurigakan.</h2><p>Setiap kotak menjelaskan risiko dengan bahasa sederhana.</p></div>
+      <div class="danger-layout">
+        <article class="big-chat"><div class="sender"><strong>Nomor Baru</strong><span>+62 812-0000-XXXX</span></div><p>Selamat! Anda mendapat hadiah. Klik <button class="hotspot" type="button" data-info="Link pendek bisa menyembunyikan alamat asli. Jangan klik sebelum cek sumber resmi.">bit.ly/hadiah-cepat</button> lalu masukkan <button class="hotspot" type="button" data-info="OTP adalah kunci akun. Jangan berikan ke siapa pun.">kode OTP</button> dalam <button class="hotspot" type="button" data-info="Batas waktu palsu dipakai agar korban panik.">5 menit</button>.</p></article>
+        <aside class="info-box" id="hotspotInfo" aria-live="polite"><strong>Penjelasan muncul di sini.</strong><p>Tekan kotak berwarna kuning pada pesan.</p></aside>
+      </div>
+    </section>
+
+    <section class="section-shell compact-section" id="simulasi" aria-labelledby="simTitle">
+      <div class="section-heading"><p class="eyebrow"><span></span> Simulasi</p><h2 id="simTitle">Apa keputusanmu?</h2><p>Pilih tindakan, lalu lihat tingkat risikonya.</p></div>
+      <div class="sim-grid">
+        <div class="chat-sim"><div class="chat-bubble suspicious"><small>WA tidak dikenal</small><p>Bu, paket gagal dikirim. Buka file Resi_Paket.apk.</p></div><div class="risk-meter" aria-label="Meter risiko"><span>Risiko</span><div><i id="riskFill"></i></div><strong id="riskText">Belum dipilih</strong></div></div>
+        <div class="sim-actions"><button class="decision-btn" type="button" data-risk="90" data-message="Sangat berisiko. File APK dari orang tidak dikenal bisa mencuri data dan akun.">Buka file</button><button class="decision-btn" type="button" data-risk="70" data-message="Masih berisiko. Membalas bisa membuat penipu tahu nomor aktif.">Balas pesan</button><button class="decision-btn good" type="button" data-risk="10" data-message="Pilihan aman. Hapus pesan, blokir nomor, lalu tanya ke kanal resmi.">Hapus & blokir</button></div>
+      </div>
+    </section>
+
+    <section class="section-shell compact-section" id="cek" aria-labelledby="cekTitle">
+      <div class="section-heading"><p class="eyebrow"><span></span> Cek aman</p><h2 id="cekTitle">Cek sebelum klik.</h2><p>Masukkan contoh link atau nama file. Hasilnya hanya panduan sederhana.</p></div>
+      <div class="checker-grid">
+        <label class="checker-box"><span>Cek link</span><input id="linkInput" type="text" placeholder="contoh: bit.ly/hadiah" autocomplete="off"><button class="btn primary" type="button" id="linkBtn">Cek link</button><output id="linkResult">Hasil cek link akan muncul di sini.</output></label>
+        <label class="checker-box"><span>Cek file</span><input id="fileInput" type="text" placeholder="contoh: undangan.apk" autocomplete="off"><button class="btn primary" type="button" id="fileBtn">Cek file</button><output id="fileResult">Hasil cek file akan muncul di sini.</output></label>
+      </div>
+    </section>
+
+    <section class="section-shell compact-section" id="kuis" aria-labelledby="quizTitle">
+      <div class="section-heading"><p class="eyebrow"><span></span> Kuis cepat</p><h2 id="quizTitle">Pilih jawaban aman.</h2><p>Skor muncul langsung setelah memilih.</p></div>
+      <div class="quiz-card"><div class="quiz-top"><strong id="quizQuestion">Apa yang paling aman saat menerima file APK dari nomor baru?</strong><span id="quizScore">Skor 0</span></div><div class="choice-grid" id="quizChoices"><button class="quiz-choice" type="button" data-correct="false">Buka file</button><button class="quiz-choice" type="button" data-correct="true">Hapus dan blokir</button><button class="quiz-choice" type="button" data-correct="false">Kirim ke teman</button></div><p class="quiz-feedback" id="quizFeedback" aria-live="polite">Jawab pertanyaan pertama.</p></div>
+    </section>
+
+    <section class="section-shell final-section" id="darurat" aria-labelledby="daruratTitle">
+      <div class="final-card"><p class="eyebrow"><span></span> Langkah darurat</p><h2 id="daruratTitle">Kalau sudah terlanjur klik.</h2><div class="emergency-list"><div><strong>1</strong><span>Matikan internet.</span></div><div><strong>2</strong><span>Ganti password.</span></div><div><strong>3</strong><span>Hubungi bank atau pihak resmi.</span></div><div><strong>4</strong><span>Ceritakan ke keluarga/guru/petugas.</span></div></div><a class="btn primary" href="#top">Kembali ke atas</a></div>
+    </section>
+  </main>
+
+  <button class="help-float" type="button" id="helpBtn">Butuh petunjuk?</button>
+  <footer class="site-footer"><strong>KKN ISL Gubug UKDW 2026</strong><p>Website edukasi “Awas Klik” untuk membantu masyarakat mengenali penipuan online.</p><p>Didesain sederhana: teks besar, kontras tinggi, tombol lebar, jarak lega, dan navigasi mudah.</p></footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script>
+  (function(){
+    const $=(s,r=document)=>r.querySelector(s); const $$=(s,r=document)=>Array.from(r.querySelectorAll(s));
+    const toast=$('#toast'); let toastTimer;
+    function showToast(message){ if(!toast) return; toast.textContent=message; toast.classList.add('show'); clearTimeout(toastTimer); toastTimer=setTimeout(()=>toast.classList.remove('show'),4200); }
+    function safeText(id,text){ const el=$(id); if(el) el.textContent=text; }
+    const progress=$('#readingProgress');
+    function updateProgress(){ if(!progress) return; const top=window.scrollY||document.documentElement.scrollTop; const h=document.documentElement.scrollHeight-window.innerHeight; progress.style.width=(h>0?Math.min(100,Math.max(0,(top/h)*100)):0)+'%'; }
+    window.addEventListener('scroll',updateProgress,{passive:true}); updateProgress();
+
+    const navLinks=$$('.main-nav a');
+    navLinks.forEach(link=>link.addEventListener('click',()=>{navLinks.forEach(a=>a.classList.remove('active')); link.classList.add('active');}));
+
+    const storySteps=[
+      {step:'Langkah 1 dari 3',question:'Ada file “Undangan Nikah.apk”. Apa yang paling aman?',choices:[['Buka file karena penasaran',false,'Berisiko. File APK dari orang tidak dikenal bisa mencuri data.'],['Hapus pesan dan tanya orang yang dikenal',true,'Aman. Sari berhenti dulu dan mengecek lewat orang terpercaya.'],['Teruskan ke grup keluarga',false,'Kurang aman. Pesan berbahaya bisa menyebar ke orang lain.']]},
+      {step:'Langkah 2 dari 3',question:'Ada link hadiah dengan batas waktu 5 menit. Apa yang dilakukan?',choices:[['Klik cepat sebelum habis',false,'Berisiko. Batas waktu sering dipakai agar korban panik.'],['Cek alamat resmi sendiri',true,'Aman. Jangan masuk dari link pesan; ketik alamat resmi sendiri.'],['Masukkan data dulu, cek nanti',false,'Berbahaya. Data pribadi tidak boleh diberikan ke link tidak jelas.']]},
+      {step:'Langkah 3 dari 3',question:'Ada orang mengaku petugas meminta OTP. Apa jawaban aman?',choices:[['Berikan OTP supaya cepat selesai',false,'Sangat berbahaya. OTP adalah kunci akun.'],['Tolak dan hubungi kanal resmi',true,'Tepat. OTP tidak boleh diberikan kepada siapa pun.'],['Kirim sebagian angka OTP saja',false,'Tetap berbahaya. Jangan kirim angka OTP sedikit pun.']]}
+    ];
+    let storyIndex=0;
+    function renderStory(){
+      const wrap=$('#storyChoices'); if(!wrap) return; const item=storySteps[storyIndex];
+      safeText('#storyStep',item.step); safeText('#storyQuestion',item.question); safeText('#storyFeedback','Pilih satu jawaban.');
+      wrap.innerHTML='';
+      item.choices.forEach(([text,safe,feedback])=>{ const b=document.createElement('button'); b.type='button'; b.textContent=text; b.addEventListener('click',()=>{ $$('#storyChoices button').forEach(x=>x.classList.remove('good-selected','bad-selected','is-selected')); b.classList.add(safe?'good-selected':'bad-selected'); safeText('#storyFeedback',feedback); showToast(safe?'Pilihan aman.':'Hati-hati, pilihan itu berisiko.'); if(safe){setTimeout(()=>{storyIndex=(storyIndex+1)%storySteps.length; renderStory();},1600);} }); wrap.appendChild(b); });
+    }
+    renderStory();
+
+    $$('.hotspot').forEach(button=>button.addEventListener('click',()=>{ const box=$('#hotspotInfo'); if(box) box.innerHTML='<strong>Tanda bahaya</strong><p>'+button.dataset.info+'</p>'; showToast('Tanda bahaya berhasil ditemukan.'); }));
+    $$('.decision-btn').forEach(button=>button.addEventListener('click',()=>{ const risk=Number(button.dataset.risk||0); const fill=$('#riskFill'); const text=$('#riskText'); if(fill) fill.style.width=risk+'%'; if(text) text.textContent=risk>=80?'Sangat tinggi':risk>=50?'Tinggi':'Rendah'; showToast(button.dataset.message||'Keputusan dipilih.'); }));
+    const linkBtn=$('#linkBtn'); if(linkBtn) linkBtn.addEventListener('click',()=>{ const value=($('#linkInput')?.value||'').trim().toLowerCase(); const result=$('#linkResult'); if(!result) return; if(!value){result.textContent='Masukkan link terlebih dahulu.';return;} const flags=['bit.ly','tinyurl','gratis','hadiah','cepat','otp','login-','akun','bantuan']; result.textContent=flags.some(f=>value.includes(f))?'Waspada. Link ini punya ciri mencurigakan. Jangan klik sebelum cek kanal resmi.':'Belum terlihat ciri mencurigakan, tetapi tetap cek alamat resmi dan pengirimnya.'; });
+    const fileBtn=$('#fileBtn'); if(fileBtn) fileBtn.addEventListener('click',()=>{ const value=($('#fileInput')?.value||'').trim().toLowerCase(); const result=$('#fileResult'); if(!result) return; if(!value){result.textContent='Masukkan nama file terlebih dahulu.';return;} const danger=['.apk','.exe','.scr','.bat','.js'].some(ext=>value.endsWith(ext)); result.textContent=danger?'Berisiko tinggi. Jangan buka file ini dari pesan tidak dikenal.':'Lebih aman, tetapi tetap pastikan file berasal dari orang atau website resmi.'; });
+
+    const quiz=[['Apa yang paling aman saat menerima file APK dari nomor baru?',['Buka file','Hapus dan blokir','Kirim ke teman'],1,'Benar. File APK dari nomor tidak dikenal harus dihindari.'],['Bolehkah kode OTP diberikan ke orang yang mengaku petugas?',['Tidak boleh','Boleh kalau mendesak','Boleh sebagian'],0,'Benar. OTP tidak boleh dibagikan.'],['Apa rumus aman sebelum klik?',['Cepat, klik, selesai','STOP, CEK, TANYA','Balas, tunggu, klik'],1,'Benar. STOP, CEK, TANYA.']];
+    let qi=0,score=0;
+    function renderQuiz(){ const wrap=$('#quizChoices'); if(!wrap) return; const [q,answers,correct]=quiz[qi]; safeText('#quizQuestion',q); wrap.innerHTML=''; answers.forEach((ans,i)=>{ const b=document.createElement('button'); b.className='quiz-choice'; b.type='button'; b.textContent=ans; b.addEventListener('click',()=>{ $$('#quizChoices button').forEach(x=>x.classList.remove('good-selected','bad-selected')); b.classList.add(i===correct?'good-selected':'bad-selected'); if(i===correct){score++; safeText('#quizFeedback',quiz[qi][3]); showToast('Jawaban benar.');} else {safeText('#quizFeedback','Belum tepat. Ingat: jangan klik, jangan beri OTP, dan cek sumber resmi.'); showToast('Coba ingat rumus STOP, CEK, TANYA.');} safeText('#quizScore','Skor '+score); setTimeout(()=>{qi=(qi+1)%quiz.length; renderQuiz();},1600); }); wrap.appendChild(b); }); }
+    renderQuiz();
+    const help=$('#helpBtn'); if(help) help.addEventListener('click',()=>showToast('Petunjuk: mulai dari Simulasi, tekan pilihan, lalu baca hasilnya. Rumus aman: STOP, CEK, TANYA.'));
+  })();
+  </script>
+</body>
 </html>
