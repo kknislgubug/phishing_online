@@ -1,9 +1,19 @@
-# Awas Klik — Storytelling Anti Phishing
+# Awas Klik — KKN ISL Gubug UKDW 2026
 
 Website statis interaktif untuk edukasi penipuan online/phishing yang ramah pengguna low vision.
 
+## Identitas
+
+Program: **KKN ISL Gubug UKDW 2026**  
+Institusi: **Universitas Kristen Duta Wacana**  
+Topik: Edukasi keamanan digital sederhana melalui storytelling dan simulasi.
+
 ## Fitur utama
 
+- Logo UKDW sudah ditambahkan pada header dan footer.
+- Identitas **KKN ISL Gubug UKDW 2026** sudah ditampilkan.
+- Tampilan mobile diperbaiki supaya menu tidak mendorong konten terlalu jauh ke bawah.
+- Mobile navigation menggunakan drawer/dropdown ringkas yang lebih konsisten dengan tampilan desktop.
 - Hero modern dengan animasi ponsel dan scan pesan.
 - Storytelling interaktif dengan pilihan keputusan.
 - Hotspot tanda bahaya pada pesan palsu.
@@ -37,6 +47,7 @@ Buka file `index.html` di browser.
 ├── script.js
 ├── README.md
 └── assets/
+    └── logo-ukdw.png
 ```
 
 ## Catatan aksesibilitas

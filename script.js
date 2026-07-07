@@ -515,8 +515,28 @@ function initEvents() {
   $(".menu-toggle").addEventListener("click", (event) => {
     const open = event.currentTarget.getAttribute("aria-expanded") === "true";
     event.currentTarget.setAttribute("aria-expanded", String(!open));
-    $("#mainNav").classList.toggle("open", !open);
-    $(".accessibility-tools").classList.toggle("open", !open);
+    $("#navDrawer").classList.toggle("open", !open);
+  });
+
+  $$("#mainNav a").forEach((link) => {
+    link.addEventListener("click", () => {
+      const toggle = $(".menu-toggle");
+      if (window.matchMedia("(max-width: 760px)").matches) {
+        toggle.setAttribute("aria-expanded", "false");
+        $("#navDrawer").classList.remove("open");
+      }
+    });
+  });
+
+  document.addEventListener("click", (event) => {
+    const drawer = $("#navDrawer");
+    const toggle = $(".menu-toggle");
+    if (!drawer || !toggle) return;
+    const clickedInsideMenu = drawer.contains(event.target) || toggle.contains(event.target);
+    if (!clickedInsideMenu && window.matchMedia("(max-width: 760px)").matches) {
+      toggle.setAttribute("aria-expanded", "false");
+      drawer.classList.remove("open");
+    }
   });
 
   $$(".hotspot").forEach((button) => {
