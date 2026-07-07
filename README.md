@@ -15,3 +15,6 @@ Perbaikan utama:
 3. Pastikan `index.html` berada langsung di root, bukan di dalam folder lain.
 4. Commit changes.
 5. Tunggu GitHub Pages selesai deploy.
+
+
+Catatan revisi: fitur Cek Link sudah dihapus. Bagian yang tersisa adalah Cek File sederhana.
