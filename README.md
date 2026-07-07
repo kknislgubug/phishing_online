@@ -1,27 +1,15 @@
 # Awas Klik — KKN ISL Gubug UKDW 2026
 
-Website edukasi penipuan online/phishing dengan desain low vision friendly.
+Website edukasi penipuan online yang dibuat sederhana, jelas, dan ramah untuk pengguna low vision.
 
-## Isi Project
+## Versi ini
+- Bagian logo gambar UKDW yang sebelumnya tidak muncul sudah dihapus.
+- Tombol header A+, Kontras, Kurangi animasi, dan Bacakan sudah dihapus agar tampilan lebih bersih.
+- Tampilan mobile dan desktop dibuat lebih konsisten.
+- Tetap mempertahankan teks besar, kontras tinggi, tombol besar, navigasi jelas, dan alur belajar interaktif.
 
-- `index.html`
-- `styles.css`
-- `script.js`
-- `assets/logo-ukdw.png`
-
-## Perbaikan Versi Ini
-
-- Tampilan desktop dan mobile dibuat lebih konsisten.
-- Tidak memakai drawer/menu panjang di mobile.
-- Navbar menjadi tombol horizontal yang bisa digeser di layar kecil.
-- Teks lebih sedikit, lebih besar, dan lebih fokus.
-- Logo UKDW ditampilkan di header dan footer.
-- Tulisan `KKN ISL Gubug UKDW 2026` ditampilkan jelas.
-- Tetap ada fitur aksesibilitas: A+, Kontras, Animasi, dan Bacakan.
-
-## Cara Upload ke GitHub Pages
-
-1. Ekstrak ZIP.
-2. Upload semua file ke repository GitHub.
-3. Aktifkan GitHub Pages dari branch `main`.
-4. Buka link GitHub Pages yang muncul.
+## Cara upload ke GitHub Pages
+1. Upload seluruh isi folder ini ke repository GitHub.
+2. Masuk ke Settings > Pages.
+3. Pilih branch `main` dan folder `/root`.
+4. Simpan, lalu buka link GitHub Pages.

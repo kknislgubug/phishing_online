@@ -587,3 +587,36 @@ h3 { font-size: clamp(1.35rem, 2.6vw, 2rem); }
   .footer-brand { align-items: flex-start; }
   .footer-brand img { width: 68px; height: 68px; }
 }
+
+/* V6 cleanup: remove broken logo area and header tool buttons from layout */
+.header-main {
+  grid-template-columns: 1fr;
+  justify-items: center;
+  gap: 8px;
+}
+.brand {
+  justify-content: center;
+}
+.site-header {
+  padding-top: 16px;
+}
+.main-nav {
+  margin-top: 12px;
+}
+.footer-brand.text-only-footer {
+  justify-content: center;
+  text-align: center;
+}
+.footer-brand.text-only-footer p {
+  margin: 8px 0 0;
+}
+
+@media (max-width: 1050px) {
+  .header-main { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 640px) {
+  .site-header { padding: 12px 10px 8px; }
+  .brand { width: 100%; justify-content: center; }
+  .main-nav { justify-content: flex-start; }
+}

@@ -40,52 +40,9 @@ const revealObserver = new IntersectionObserver(entries => {
 }, { threshold: 0.16 });
 $$('.reveal').forEach(item => revealObserver.observe(item));
 
-// Accessibility tools
-const body = document.body;
-const fontBtn = $('#fontBtn');
-const contrastBtn = $('#contrastBtn');
-const motionBtn = $('#motionBtn');
-const speakBtn = $('#speakBtn');
-
-function togglePressed(button, active) {
-  button.setAttribute('aria-pressed', active ? 'true' : 'false');
-}
-fontBtn.addEventListener('click', () => {
-  const active = body.classList.toggle('large-text');
-  togglePressed(fontBtn, active);
-  showToast(active ? 'Teks diperbesar.' : 'Ukuran teks kembali normal.');
-});
-contrastBtn.addEventListener('click', () => {
-  const active = body.classList.toggle('high-contrast');
-  togglePressed(contrastBtn, active);
-  showToast(active ? 'Mode kontras aktif.' : 'Mode kontras dimatikan.');
-});
-motionBtn.addEventListener('click', () => {
-  const active = body.classList.toggle('reduce-motion');
-  togglePressed(motionBtn, active);
-  showToast(active ? 'Animasi dikurangi.' : 'Animasi diaktifkan lagi.');
-});
-speakBtn.addEventListener('click', () => {
-  if (!('speechSynthesis' in window)) {
-    showToast('Fitur bacakan tidak tersedia di browser ini.');
-    return;
-  }
-  if (speechSynthesis.speaking) {
-    speechSynthesis.cancel();
-    showToast('Pembacaan dihentikan.');
-    return;
-  }
-  const text = [
-    'Awas Klik. Tahan. Lihat. Tanya.',
-    'Jangan langsung klik file APK, link pendek, atau permintaan OTP.',
-    'Kalau ragu, tanyakan ke keluarga, guru, petugas, atau kanal resmi.'
-  ].join(' ');
-  const utterance = new SpeechSynthesisUtterance(text);
-  utterance.lang = 'id-ID';
-  utterance.rate = 0.88;
-  speechSynthesis.speak(utterance);
-  showToast('Halaman sedang dibacakan.');
-});
+// Header accessibility buttons were removed to keep the page cleaner and simpler.
+// Low-vision support is now built into the base layout: large text, high contrast,
+// wide buttons, and consistent spacing.
 
 // Help button
 $('#helpBtn').addEventListener('click', () => {
