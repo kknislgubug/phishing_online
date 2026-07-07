@@ -54,11 +54,11 @@ const quizItems = [
 ];
 
 const progress = {
-  scamCard: false,
+  story: false,
+  danger: false,
   simulator: false,
-  quiz: false,
   apk: false,
-  emergency: false,
+  quiz: false,
 };
 
 let currentMessage = 0;
@@ -67,9 +67,11 @@ let quizScore = 0;
 let quizAnswered = false;
 let toastTimer = 0;
 
+const body = document.body;
 const safeMeter = document.querySelector("#safeMeter");
 const safeScoreText = document.querySelector("#safeScoreText");
 const reasonPanel = document.querySelector("#reasonPanel");
+const dangerExplain = document.querySelector("#dangerExplain");
 const chatList = document.querySelector("#chatList");
 const simFeedback = document.querySelector("#simFeedback");
 const nextMessageBtn = document.querySelector("#nextMessageBtn");
@@ -80,6 +82,8 @@ const quizScoreText = document.querySelector("#quizScore");
 const fileNameInput = document.querySelector("#fileNameInput");
 const fileResult = document.querySelector("#fileResult");
 const toast = document.querySelector("#toast");
+const confettiLayer = document.querySelector("#confettiLayer");
+const scrollProgress = document.querySelector("#scrollProgress");
 
 function updateProgress(key) {
   progress[key] = true;
@@ -88,7 +92,8 @@ function updateProgress(key) {
   safeScoreText.textContent = `${done} dari 5 langkah`;
 
   if (done === 5) {
-    showToast("Mantap, Bu. Semua latihan utama sudah dicoba.");
+    showToast("Mantap. Semua latihan utama sudah dicoba.");
+    launchConfetti();
   }
 }
 
@@ -98,7 +103,7 @@ function showToast(message) {
   toast.classList.add("is-visible");
   toastTimer = window.setTimeout(() => {
     toast.classList.remove("is-visible");
-  }, 2600);
+  }, 2800);
 }
 
 function setFeedback(element, message, type) {
@@ -117,7 +122,7 @@ function renderMessage() {
       <p>${message.text}</p>
     </div>
   `;
-  setFeedback(simFeedback, "Pilih jawaban dulu, Bu.", "");
+  setFeedback(simFeedback, "Pilih jawaban dulu.", "");
 }
 
 function answerSimulator(choice) {
@@ -127,9 +132,12 @@ function answerSimulator(choice) {
   if (correct) {
     setFeedback(simFeedback, `Benar. ${message.explain}`, "good");
     updateProgress("simulator");
+    showToast("Keputusan aman: berhenti dan cek dulu.");
+    launchConfetti(12);
   } else {
     const prefix = message.safe ? "Lebih baik tetap cek dulu." : "Hampir kena.";
     setFeedback(simFeedback, `${prefix} ${message.explain}`, "bad");
+    showToast("Coba pilih langkah yang lebih aman.");
   }
 }
 
@@ -147,9 +155,7 @@ function renderQuiz() {
 }
 
 function answerQuiz(answerScam) {
-  if (quizAnswered) {
-    return;
-  }
+  if (quizAnswered) return;
 
   quizAnswered = true;
   const item = quizItems[currentQuiz];
@@ -159,6 +165,7 @@ function answerQuiz(answerScam) {
     quizScore += 1;
     quizScoreText.textContent = String(quizScore);
     setFeedback(quizFeedback, `Benar. ${item.explain}`, "good");
+    launchConfetti(10);
   } else {
     setFeedback(quizFeedback, `Belum tepat. ${item.explain}`, "bad");
   }
@@ -167,15 +174,14 @@ function answerQuiz(answerScam) {
     currentQuiz += 1;
     if (currentQuiz >= quizItems.length) {
       const total = quizItems.length;
-      const message =
-        quizScore >= 4
-          ? `Kuis selesai. Skor ${quizScore}/${total}. Ibu sudah jago curiga.`
-          : `Kuis selesai. Skor ${quizScore}/${total}. Yuk ulangi pelan-pelan.`;
+      const message = quizScore >= 4
+        ? `Kuis selesai. Skor ${quizScore}/${total}. Sudah jago curiga.`
+        : `Kuis selesai. Skor ${quizScore}/${total}. Yuk ulangi pelan-pelan.`;
       setFeedback(quizFeedback, message, quizScore >= 4 ? "good" : "bad");
+      updateProgress("quiz");
       currentQuiz = 0;
       quizScore = 0;
       quizScoreText.textContent = "0";
-      updateProgress("quiz");
       return;
     }
     renderQuiz();
@@ -186,16 +192,22 @@ function checkFileName() {
   const value = fileNameInput.value.trim().toLowerCase();
 
   if (!value) {
-    setFeedback(fileResult, "Ketik nama file dulu, Bu.", "bad");
+    setFeedback(fileResult, "Ketik nama file dulu.", "bad");
     return;
   }
 
   if (value.endsWith(".apk")) {
     setFeedback(fileResult, "Bahaya. Ini APK. Jangan dibuka kalau bukan dari sumber resmi.", "bad");
+    showToast("Tanda bahaya: file APK.");
   } else if (value.endsWith(".jpg") || value.endsWith(".png") || value.endsWith(".jpeg")) {
     setFeedback(fileResult, "Ini terlihat seperti foto. Tetap cek pengirimnya dulu.", "good");
-  } else if (value.startsWith("http") || value.includes("bit.ly")) {
-    setFeedback(fileResult, "Ini link. Jangan klik kalau alamatnya tidak resmi atau bikin panik.", "bad");
+    launchConfetti(8);
+  } else if (value.endsWith(".pdf")) {
+    setFeedback(fileResult, "PDF lebih umum dipakai untuk dokumen. Tetap cek pengirim dan jangan isi data pribadi.", "good");
+    launchConfetti(8);
+  } else if (value.startsWith("http") || value.includes("bit.ly") || value.includes("s.id")) {
+    setFeedback(fileResult, "Ini link. Jangan klik kalau alamatnya tidak resmi atau membuat panik.", "bad");
+    showToast("Cek link lewat website resmi, bukan dari pesan acak.");
   } else {
     setFeedback(fileResult, "Belum tentu aman. Cek pengirim, jenis file, dan tanya dulu kalau ragu.", "bad");
   }
@@ -205,11 +217,12 @@ function checkFileName() {
 
 function readMainLesson() {
   const text = [
-    "Jangan asal klik, Bu.",
+    "Jangan panik. Jangan asal klik.",
     "Kalau ada pesan mencurigakan, ingat rumusnya.",
     "Stop. Cek. Tanya.",
     "Jangan buka file APK dari nomor tidak dikenal.",
     "Jangan berikan kode OTP kepada siapa pun.",
+    "Kalau ragu, tanya orang yang dipercaya.",
   ].join(" ");
 
   if (!("speechSynthesis" in window)) {
@@ -220,51 +233,162 @@ function readMainLesson() {
   window.speechSynthesis.cancel();
   const utterance = new SpeechSynthesisUtterance(text);
   utterance.lang = "id-ID";
-  utterance.rate = 0.88;
+  utterance.rate = 0.86;
   window.speechSynthesis.speak(utterance);
+  showToast("Halaman sedang dibacakan.");
 }
 
-document.querySelectorAll(".scam-card").forEach((card) => {
-  card.addEventListener("click", () => {
-    document.querySelectorAll(".scam-card").forEach((item) => item.classList.remove("is-active"));
-    card.classList.add("is-active");
-    reasonPanel.innerHTML = `
-      <strong>Kenapa harus hati-hati?</strong>
-      <p>${card.dataset.reason}</p>
-    `;
-    updateProgress("scamCard");
-  });
-});
+function launchConfetti(amount = 24) {
+  if (body.classList.contains("motion-off")) return;
 
-document.querySelectorAll("[data-choice]").forEach((button) => {
-  button.addEventListener("click", () => answerSimulator(button.dataset.choice));
-});
+  const colors = ["#ffd84d", "#6d28d9", "#0b4a8b", "#f97316", "#166534"];
 
-document.querySelectorAll(".fake-file").forEach((button) => {
-  button.addEventListener("click", () => {
-    fileNameInput.value = button.textContent.trim();
-    checkFileName();
-  });
-});
-
-document.querySelectorAll("#emergencySteps button").forEach((button) => {
-  button.addEventListener("click", () => {
-    button.classList.toggle("is-done");
-    updateProgress("emergency");
-  });
-});
-
-nextMessageBtn.addEventListener("click", nextMessage);
-document.querySelector("#quizScamBtn").addEventListener("click", () => answerQuiz(true));
-document.querySelector("#quizSafeBtn").addEventListener("click", () => answerQuiz(false));
-document.querySelector("#checkFileBtn").addEventListener("click", checkFileName);
-fileNameInput.addEventListener("keydown", (event) => {
-  if (event.key === "Enter") {
-    checkFileName();
+  for (let index = 0; index < amount; index += 1) {
+    const piece = document.createElement("span");
+    piece.className = "confetti";
+    piece.style.left = `${Math.random() * 100}%`;
+    piece.style.background = colors[index % colors.length];
+    piece.style.animationDelay = `${Math.random() * 180}ms`;
+    piece.style.transform = `rotate(${Math.random() * 180}deg)`;
+    confettiLayer.appendChild(piece);
+    window.setTimeout(() => piece.remove(), 1200);
   }
-});
-document.querySelector("#readPageBtn").addEventListener("click", readMainLesson);
+}
 
-renderMessage();
-renderQuiz();
-setFeedback(fileResult, "Contoh: Undangan Nikah.apk, CEK RESI.apk, atau Foto Kegiatan.jpg.", "");
+function setupRevealAnimation() {
+  const elements = document.querySelectorAll(".reveal");
+  if (!("IntersectionObserver" in window)) {
+    elements.forEach((element) => element.classList.add("is-visible"));
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.18 }
+  );
+
+  elements.forEach((element) => observer.observe(element));
+}
+
+function updateScrollProgress() {
+  const max = document.documentElement.scrollHeight - window.innerHeight;
+  const percent = max > 0 ? (window.scrollY / max) * 100 : 0;
+  scrollProgress.style.width = `${percent}%`;
+}
+
+function setupActiveNav() {
+  const links = [...document.querySelectorAll(".nav a")];
+  const sections = links
+    .map((link) => document.querySelector(link.getAttribute("href")))
+    .filter(Boolean);
+
+  if (!("IntersectionObserver" in window)) return;
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        links.forEach((link) => link.classList.remove("is-active"));
+        const active = links.find((link) => link.getAttribute("href") === `#${entry.target.id}`);
+        if (active) active.classList.add("is-active");
+      });
+    },
+    { rootMargin: "-45% 0px -50% 0px" }
+  );
+
+  sections.forEach((section) => observer.observe(section));
+}
+
+function toggleClass(button, className, activeMessage, inactiveMessage) {
+  const isActive = body.classList.toggle(className);
+  button.setAttribute("aria-pressed", String(isActive));
+  showToast(isActive ? activeMessage : inactiveMessage);
+}
+
+function init() {
+  renderMessage();
+  renderQuiz();
+  setupRevealAnimation();
+  setupActiveNav();
+  updateScrollProgress();
+
+  window.addEventListener("scroll", updateScrollProgress, { passive: true });
+
+  document.querySelector("#fontBtn").addEventListener("click", (event) => {
+    toggleClass(event.currentTarget, "large-text", "Font diperbesar.", "Font kembali normal.");
+  });
+
+  document.querySelector("#contrastBtn").addEventListener("click", (event) => {
+    toggleClass(event.currentTarget, "high-contrast", "Mode kontras tinggi aktif.", "Mode kontras standar aktif.");
+  });
+
+  document.querySelector("#motionBtn").addEventListener("click", (event) => {
+    toggleClass(event.currentTarget, "motion-off", "Animasi dikurangi.", "Animasi aktif kembali.");
+  });
+
+  document.querySelector("#readPageBtn").addEventListener("click", readMainLesson);
+
+  document.querySelectorAll(".danger-hotspot").forEach((button) => {
+    button.addEventListener("click", () => {
+      dangerExplain.innerHTML = `
+        <span class="explain-icon">⚠️</span>
+        <div>
+          <strong>Ini tanda bahaya.</strong>
+          <p>${button.dataset.info}</p>
+        </div>
+      `;
+      updateProgress("danger");
+      showToast("Tanda bahaya berhasil dikenali.");
+    });
+  });
+
+  document.querySelectorAll(".scam-card").forEach((card) => {
+    card.addEventListener("click", () => {
+      document.querySelectorAll(".scam-card").forEach((item) => item.classList.remove("is-selected"));
+      card.classList.add("is-selected");
+      reasonPanel.innerHTML = `
+        <strong>Kenapa mencurigakan?</strong>
+        <p>${card.dataset.reason}</p>
+      `;
+      updateProgress("story");
+    });
+  });
+
+  document.querySelectorAll("[data-choice]").forEach((button) => {
+    button.addEventListener("click", () => answerSimulator(button.dataset.choice));
+  });
+
+  nextMessageBtn.addEventListener("click", nextMessage);
+
+  document.querySelector("#quizScamBtn").addEventListener("click", () => answerQuiz(true));
+  document.querySelector("#quizSafeBtn").addEventListener("click", () => answerQuiz(false));
+
+  document.querySelector("#checkFileBtn").addEventListener("click", checkFileName);
+  fileNameInput.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") checkFileName();
+  });
+
+  document.querySelectorAll(".fake-file").forEach((button) => {
+    button.addEventListener("click", () => {
+      fileNameInput.value = button.textContent.trim();
+      checkFileName();
+    });
+  });
+
+  document.querySelectorAll("#emergencySteps button").forEach((button) => {
+    button.addEventListener("click", () => {
+      button.classList.toggle("is-done");
+      updateProgress("danger");
+      showToast(button.classList.contains("is-done") ? "Langkah darurat ditandai selesai." : "Tanda selesai dibatalkan.");
+    });
+  });
+}
+
+document.addEventListener("DOMContentLoaded", init);
