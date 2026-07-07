@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Awas Penipuan di HP | STOP CEK TANYA</title>
+    <meta
+      name="description"
+      content="Website interaktif edukasi ibu-ibu KWT untuk mengenali pesan penipuan, APK berbahaya, OTP, dan langkah aman STOP CEK TANYA."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#awal" aria-label="Awas Penipuan di HP">
+        <span class="brand-mark">!</span>
+        <span>Awas Klik</span>
+      </a>
+      <nav class="nav" aria-label="Navigasi utama">
+        <a href="#contoh">Contoh</a>
+        <a href="#rumus">Rumus</a>
+        <a href="#kuis">Kuis</a>
+        <a href="#darurat">Darurat</a>
+      </nav>
+      <button class="speaker-btn" id="readPageBtn" type="button">
+        <span aria-hidden="true">🔊</span>
+        Bacakan
+      </button>
+    </header>
+
+    <main>
+      <section class="hero" id="awal">
+        <div class="hero-copy">
+          <p class="eyebrow">Edukasi KWT Padukuhan Gubug</p>
+          <h1>Jangan asal klik, Bu!</h1>
+          <p class="lead">
+            Latihan singkat supaya HP, WA, m-banking, dan data pribadi tetap aman dari
+            penipuan pesan palsu.
+          </p>
+          <div class="hero-actions">
+            <a class="primary-action" href="#simulator">Mulai latihan</a>
+            <a class="secondary-action" href="#rumus">Lihat rumus aman</a>
+          </div>
+          <div class="safety-meter" aria-label="Progress belajar">
+            <div class="meter-label">
+              <strong>Meter Aman</strong>
+              <span id="safeScoreText">0 dari 5 langkah</span>
+            </div>
+            <div class="meter-track" aria-hidden="true">
+              <div class="meter-fill" id="safeMeter"></div>
+            </div>
+          </div>
+        </div>
+        <div class="hero-visual" aria-label="Ibu-ibu dan relawan curiga melihat pesan penipuan">
+          <img
+            src="../assets/muak-vanesa-natan-yohanes-opening.png"
+            alt="Kelompok warga memperhatikan HP dengan ekspresi curiga dan muak terhadap pesan penipuan"
+          />
+        </div>
+      </section>
+
+      <section class="alert-strip" aria-label="Pesan utama">
+        <p>
+          Kalau pesan bikin panik, menjanjikan hadiah, atau menyuruh klik cepat,
+          berhenti dulu. Penipu paling suka kalau kita terburu-buru.
+        </p>
+      </section>
+
+      <section class="section intro-grid" id="contoh">
+        <div>
+          <p class="eyebrow">Kenali dulu</p>
+          <h2>Pesan yang sering menjebak</h2>
+          <p class="section-lead">
+            Pilih kartu untuk melihat kenapa pesan itu mencurigakan.
+          </p>
+        </div>
+        <div class="scam-cards" id="scamCards">
+          <button class="scam-card" type="button" data-reason="Nomor tidak dikenal mengirim file APK. Undangan asli biasanya berupa gambar, PDF, atau link resmi yang jelas.">
+            <span>💌</span>
+            <strong>Undangan Nikah.apk</strong>
+            <small>Dari nomor baru, langsung minta dibuka</small>
+          </button>
+          <button class="scam-card" type="button" data-reason="Pesan paket palsu sering memakai link pendek atau alamat aneh. Cek lewat aplikasi resmi ekspedisi, bukan link dari SMS/WA.">
+            <span>📦</span>
+            <strong>Paket kamu tiba</strong>
+            <small>Klik link untuk cek resi sekarang</small>
+          </button>
+          <button class="scam-card" type="button" data-reason="Penipu sering mengaku keluarga. Jangan transfer uang atau kirim kode sebelum telepon nomor lama yang sudah tersimpan.">
+            <span>👩‍👧</span>
+            <strong>Mama, ini nomor baru</strong>
+            <small>Minta uang atau kode dengan alasan darurat</small>
+          </button>
+          <button class="scam-card" type="button" data-reason="Hadiah palsu biasanya meminta klik link, bayar admin, atau kirim data pribadi. Hadiah resmi tidak memaksa terburu-buru.">
+            <span>🎁</span>
+            <strong>Selamat, menang hadiah</strong>
+            <small>Katanya dapat uang, tapi harus klik dulu</small>
+          </button>
+        </div>
+        <aside class="reason-panel" id="reasonPanel">
+          <strong>Tekan salah satu contoh pesan.</strong>
+          <p>Nanti alasan bahayanya muncul di sini dengan bahasa sederhana.</p>
+        </aside>
+      </section>
+
+      <section class="section simulator" id="simulator">
+        <div class="phone-frame" aria-label="Simulator percakapan WhatsApp">
+          <div class="phone-top">
+            <span class="dot"></span>
+            <strong>Pesan Masuk</strong>
+          </div>
+          <div class="chat-list" id="chatList"></div>
+        </div>
+        <div class="sim-panel">
+          <p class="eyebrow">Latihan cepat</p>
+          <h2>Penipuan atau aman?</h2>
+          <p class="section-lead">
+            Baca pesan di HP. Pilih keputusan yang paling aman.
+          </p>
+          <div class="choice-row" role="group" aria-label="Pilihan jawaban simulator">
+            <button class="danger-choice" type="button" data-choice="open">Buka / klik</button>
+            <button class="safe-choice" type="button" data-choice="ask">STOP - CEK - TANYA</button>
+          </div>
+          <div class="feedback" id="simFeedback" aria-live="polite">
+            Pilih jawaban dulu, Bu.
+          </div>
+          <button class="next-btn" id="nextMessageBtn" type="button">Pesan berikutnya</button>
+        </div>
+      </section>
+
+      <section class="section formula" id="rumus">
+        <div>
+          <p class="eyebrow">Rumus utama</p>
+          <h2>STOP - CEK - TANYA</h2>
+          <p class="section-lead">
+            Tiga langkah ini cukup untuk menghindari banyak penipuan HP.
+          </p>
+        </div>
+        <div class="steps">
+          <article class="step-card">
+            <span class="step-icon stop">🛑</span>
+            <h3>STOP</h3>
+            <p>Jangan langsung klik. Tarik napas dulu, apalagi kalau pesannya bikin panik.</p>
+          </article>
+          <article class="step-card">
+            <span class="step-icon check">🔍</span>
+            <h3>CEK</h3>
+            <p>Lihat pengirim, nama file, alamat link, dan apakah ada permintaan kode.</p>
+          </article>
+          <article class="step-card">
+            <span class="step-icon ask">❓</span>
+            <h3>TANYA</h3>
+            <p>Tanya anak, suami, tetangga, atau pengurus sebelum membuka pesan yang meragukan.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section apk-lab">
+        <div class="lab-copy">
+          <p class="eyebrow">File bahaya</p>
+          <h2>Apa itu APK?</h2>
+          <p class="section-lead">
+            APK itu file aplikasi. Kalau dipasang sembarangan, HP bisa dikendalikan dari jauh.
+          </p>
+          <div class="file-checker">
+            <label for="fileNameInput">Coba ketik nama file</label>
+            <div class="input-row">
+              <input id="fileNameInput" type="text" value="Undangan Nikah.apk" />
+              <button id="checkFileBtn" type="button">Cek</button>
+            </div>
+            <p id="fileResult" class="file-result" aria-live="polite"></p>
+          </div>
+        </div>
+        <div class="apk-board" aria-label="Contoh file APK mencurigakan">
+          <button class="fake-file" type="button">Undangan Nikah.apk</button>
+          <button class="fake-file" type="button">Lihat Foto.apk</button>
+          <button class="fake-file" type="button">CEK RESI.apk</button>
+          <button class="fake-file safe-file" type="button">Foto Kegiatan.jpg</button>
+        </div>
+      </section>
+
+      <section class="section quiz" id="kuis">
+        <div class="quiz-header">
+          <div>
+            <p class="eyebrow">Kuis bareng</p>
+            <h2>Tebak pesan ini</h2>
+          </div>
+          <div class="quiz-score">
+            <span>Skor</span>
+            <strong id="quizScore">0</strong>
+          </div>
+        </div>
+        <div class="quiz-layout">
+          <article class="quiz-card">
+            <p id="quizLabel">Pesan 1 dari 5</p>
+            <h3 id="quizQuestion"></h3>
+            <div class="quiz-actions">
+              <button class="safe-choice" id="quizScamBtn" type="button">Penipuan</button>
+              <button class="secondary-action buttonlike" id="quizSafeBtn" type="button">Bukan penipuan</button>
+            </div>
+            <div class="feedback" id="quizFeedback" aria-live="polite">
+              Jawab dulu, nanti penjelasannya muncul.
+            </div>
+          </article>
+          <div class="quiz-visual">
+            <img
+              src="../assets/smartphone-security-warning.png"
+              alt="Ilustrasi peringatan keamanan pada smartphone"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="section donts">
+        <div>
+          <p class="eyebrow">Ingat keras-keras</p>
+          <h2>Tiga hal yang tidak boleh dilakukan</h2>
+        </div>
+        <div class="dont-list">
+          <article>
+            <strong>Jangan buka APK</strong>
+            <p>Dari nomor tidak dikenal, meskipun namanya undangan, foto, atau resi.</p>
+          </article>
+          <article>
+            <strong>Jangan kasih OTP</strong>
+            <p>Kode 6 angka itu kunci akun. Bank, polisi, dan kurir tidak boleh minta kode itu.</p>
+          </article>
+          <article>
+            <strong>Jangan asal klik link</strong>
+            <p>Kalau link aneh, pendek, atau bukan website resmi, tanya dulu.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section emergency" id="darurat">
+        <div class="emergency-copy">
+          <p class="eyebrow">Kalau sudah terlanjur</p>
+          <h2>Mode darurat</h2>
+          <p class="section-lead">
+            Tekan langkah satu per satu. Lakukan dengan tenang, jangan malu cerita ke orang yang dipercaya.
+          </p>
+        </div>
+        <div class="emergency-steps" id="emergencySteps">
+          <button type="button">1. Matikan data seluler dan WiFi</button>
+          <button type="button">2. Jangan buka m-banking dulu</button>
+          <button type="button">3. Hubungi bank untuk blokir akun</button>
+          <button type="button">4. Cerita ke anak atau orang terpercaya</button>
+          <button type="button">5. Lapor 110 atau OJK 157</button>
+        </div>
+      </section>
+
+      <section class="closing">
+        <img
+          src="../assets/muak-vanesa-natan-yohanes-closing.png"
+          alt="Kelompok warga dan relawan melihat HP dengan ekspresi curiga"
+        />
+        <div class="closing-copy">
+          <p class="eyebrow">Pulang bawa kebiasaan baru</p>
+          <h2>Tahan. Lihat. Tanya.</h2>
+          <p>Kalau hati bilang ragu, jangan dipaksa klik.</p>
+          <a class="primary-action" href="#kuis">Ulangi kuis</a>
+        </div>
+      </section>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
