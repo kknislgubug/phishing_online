@@ -31,8 +31,21 @@ body {
   margin: 0;
   background: var(--paper);
   color: var(--ink);
-  font-size: 20px;
-  line-height: 1.5;
+  font-size: 21px;
+  line-height: 1.6;
+}
+
+.anchor-offset {
+  display: block;
+  position: relative;
+  top: -90px;
+  visibility: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 button,
@@ -103,12 +116,27 @@ img {
 }
 
 .nav a {
-  min-height: 44px;
-  padding: 10px 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 10px 16px;
   border-radius: 999px;
   color: var(--teal-dark);
   font-weight: 800;
   text-decoration: none;
+}
+
+.nav a b {
+  display: grid;
+  width: 24px;
+  height: 24px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--teal-dark);
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 900;
 }
 
 .nav a:hover {
@@ -229,8 +257,19 @@ h3 {
   overflow: hidden;
 }
 
-.hero-visual img,
-.closing img {
+.hero-visual svg {
+  width: 100%;
+  height: 100%;
+}
+
+.closing-visual {
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  overflow: hidden;
+}
+
+.closing-visual svg {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -264,6 +303,61 @@ h3 {
   border-radius: inherit;
   background: var(--yellow);
   transition: width 280ms ease;
+}
+
+.step-badge {
+  display: inline-grid;
+  min-width: 26px;
+  height: 26px;
+  place-items: center;
+  margin-right: 6px;
+  border-radius: 50%;
+  background: var(--orange);
+  color: #fff;
+  font-size: 0.9rem;
+  vertical-align: middle;
+}
+
+.howto {
+  background: var(--cream);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.howto-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 24px;
+}
+
+.howto-list article {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.06);
+}
+
+.howto-num {
+  display: grid;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--teal);
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: 900;
+}
+
+.howto-list p {
+  margin: 0;
+  font-weight: 700;
+  color: var(--ink);
 }
 
 .alert-strip {
@@ -793,8 +887,12 @@ h3 {
     grid-template-columns: 1fr;
   }
 
-  .closing img {
-    min-height: 420px;
+  .closing-visual {
+    min-height: 320px;
+  }
+
+  .howto-list {
+    grid-template-columns: 1fr;
   }
 }
 

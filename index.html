@@ -17,10 +17,11 @@
         <span>Awas Klik</span>
       </a>
       <nav class="nav" aria-label="Navigasi utama">
-        <a href="#contoh">Contoh</a>
-        <a href="#rumus">Rumus</a>
-        <a href="#kuis">Kuis</a>
-        <a href="#darurat">Darurat</a>
+        <a href="#contoh"><b>1</b>Contoh</a>
+        <a href="#latihan"><b>2</b>Latihan</a>
+        <a href="#rumus"><b>3</b>Rumus</a>
+        <a href="#kuis"><b>4</b>Kuis</a>
+        <a href="#darurat"><b>5</b>Darurat</a>
       </nav>
       <button class="speaker-btn" id="readPageBtn" type="button">
         <span aria-hidden="true">🔊</span>
@@ -51,11 +52,25 @@
             </div>
           </div>
         </div>
-        <div class="hero-visual" aria-label="Ibu-ibu dan relawan curiga melihat pesan penipuan">
-          <img
-            src="../assets/muak-vanesa-natan-yohanes-opening.png"
-            alt="Kelompok warga memperhatikan HP dengan ekspresi curiga dan muak terhadap pesan penipuan"
-          />
+        <div class="hero-visual" role="img" aria-label="Ilustrasi HP menerima pesan mencurigakan yang diberi tanda bahaya">
+          <svg viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="210" cy="210" r="200" fill="#fff" opacity="0.08"/>
+            <circle cx="210" cy="210" r="150" fill="#fff" opacity="0.1"/>
+            <rect x="130" y="60" width="160" height="300" rx="28" fill="#0f172a"/>
+            <rect x="142" y="84" width="136" height="228" rx="10" fill="#fffaf0"/>
+            <rect x="184" y="342" width="52" height="8" rx="4" fill="#fffaf0" opacity="0.6"/>
+            <rect x="156" y="104" width="112" height="46" rx="10" fill="#e6f4f2"/>
+            <rect x="168" y="116" width="60" height="8" rx="4" fill="#08788d"/>
+            <rect x="168" y="130" width="88" height="8" rx="4" fill="#52606d"/>
+            <rect x="156" y="160" width="112" height="58" rx="10" fill="#fff1f0"/>
+            <rect x="168" y="172" width="70" height="8" rx="4" fill="#bd2f2f"/>
+            <rect x="168" y="186" width="88" height="8" rx="4" fill="#bd2f2f"/>
+            <rect x="168" y="200" width="50" height="8" rx="4" fill="#bd2f2f"/>
+            <circle cx="298" cy="140" r="46" fill="#ffd12f"/>
+            <text x="298" y="153" font-size="46" text-anchor="middle" font-family="Arial" font-weight="900" fill="#0f172a">!</text>
+            <circle cx="120" cy="250" r="34" fill="#f05a28"/>
+            <path d="M108 250 l8 8 16 -18" stroke="#fff" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
         </div>
       </section>
 
@@ -66,9 +81,28 @@
         </p>
       </section>
 
+      <section class="section howto" aria-label="Cara memakai halaman ini">
+        <p class="eyebrow">Sebelum mulai</p>
+        <h2>Cara Pakai Halaman Ini</h2>
+        <div class="howto-list">
+          <article>
+            <span class="howto-num">1</span>
+            <p>Geser layar ke bawah pelan-pelan. Baca satu bagian dulu sampai selesai.</p>
+          </article>
+          <article>
+            <span class="howto-num">2</span>
+            <p>Tekan tombol besar berwarna untuk mencoba latihan dan kuisnya.</p>
+          </article>
+          <article>
+            <span class="howto-num">3</span>
+            <p>Bingung bacanya? Tekan tombol <strong>🔊 Bacakan</strong> di atas, halaman akan dibacakan.</p>
+          </article>
+        </div>
+      </section>
+
       <section class="section intro-grid" id="contoh">
         <div>
-          <p class="eyebrow">Kenali dulu</p>
+          <p class="eyebrow"><span class="step-badge">1</span> Kenali dulu</p>
           <h2>Pesan yang sering menjebak</h2>
           <p class="section-lead">
             Pilih kartu untuk melihat kenapa pesan itu mencurigakan.
@@ -103,6 +137,7 @@
       </section>
 
       <section class="section simulator" id="simulator">
+        <span id="latihan" class="anchor-offset"></span>
         <div class="phone-frame" aria-label="Simulator percakapan WhatsApp">
           <div class="phone-top">
             <span class="dot"></span>
@@ -111,7 +146,7 @@
           <div class="chat-list" id="chatList"></div>
         </div>
         <div class="sim-panel">
-          <p class="eyebrow">Latihan cepat</p>
+          <p class="eyebrow"><span class="step-badge">2</span> Latihan cepat</p>
           <h2>Penipuan atau aman?</h2>
           <p class="section-lead">
             Baca pesan di HP. Pilih keputusan yang paling aman.
@@ -129,7 +164,7 @@
 
       <section class="section formula" id="rumus">
         <div>
-          <p class="eyebrow">Rumus utama</p>
+          <p class="eyebrow"><span class="step-badge">3</span> Rumus utama</p>
           <h2>STOP - CEK - TANYA</h2>
           <p class="section-lead">
             Tiga langkah ini cukup untuk menghindari banyak penipuan HP.
@@ -156,7 +191,7 @@
 
       <section class="section apk-lab">
         <div class="lab-copy">
-          <p class="eyebrow">File bahaya</p>
+          <p class="eyebrow">Bonus latihan</p>
           <h2>Apa itu APK?</h2>
           <p class="section-lead">
             APK itu file aplikasi. Kalau dipasang sembarangan, HP bisa dikendalikan dari jauh.
@@ -181,7 +216,7 @@
       <section class="section quiz" id="kuis">
         <div class="quiz-header">
           <div>
-            <p class="eyebrow">Kuis bareng</p>
+            <p class="eyebrow"><span class="step-badge">4</span> Kuis bareng</p>
             <h2>Tebak pesan ini</h2>
           </div>
           <div class="quiz-score">
@@ -201,11 +236,13 @@
               Jawab dulu, nanti penjelasannya muncul.
             </div>
           </article>
-          <div class="quiz-visual">
-            <img
-              src="../assets/smartphone-security-warning.png"
-              alt="Ilustrasi peringatan keamanan pada smartphone"
-            />
+          <div class="quiz-visual" role="img" aria-label="Ilustrasi perisai yang menjaga HP dari penipuan">
+            <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+              <rect width="300" height="300" fill="#d8f2ef"/>
+              <path d="M150 40 L230 72 V150 C230 205 196 246 150 264 C104 246 70 205 70 150 V72 Z" fill="#08788d"/>
+              <path d="M150 60 L212 86 V150 C212 195 184 228 150 244 C116 228 88 195 88 150 V86 Z" fill="#fffaf0"/>
+              <path d="M122 150 l20 20 40 -44" stroke="#18805f" stroke-width="12" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
           </div>
         </div>
       </section>
@@ -233,7 +270,7 @@
 
       <section class="section emergency" id="darurat">
         <div class="emergency-copy">
-          <p class="eyebrow">Kalau sudah terlanjur</p>
+          <p class="eyebrow"><span class="step-badge">5</span> Kalau sudah terlanjur</p>
           <h2>Mode darurat</h2>
           <p class="section-lead">
             Tekan langkah satu per satu. Lakukan dengan tenang, jangan malu cerita ke orang yang dipercaya.
@@ -249,10 +286,16 @@
       </section>
 
       <section class="closing">
-        <img
-          src="../assets/muak-vanesa-natan-yohanes-closing.png"
-          alt="Kelompok warga dan relawan melihat HP dengan ekspresi curiga"
-        />
+        <div class="closing-visual" role="img" aria-label="Ilustrasi HP aman bertanda centang besar">
+          <svg viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg">
+            <rect width="420" height="420" fill="#f7efd9"/>
+            <rect x="130" y="60" width="160" height="300" rx="28" fill="#075164"/>
+            <rect x="142" y="84" width="136" height="228" rx="10" fill="#fffaf0"/>
+            <circle cx="210" cy="198" r="70" fill="#18805f"/>
+            <path d="M178 198 l22 22 44 -48" stroke="#fff" stroke-width="14" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect x="184" y="342" width="52" height="8" rx="4" fill="#0f172a" opacity="0.4"/>
+          </svg>
+        </div>
         <div class="closing-copy">
           <p class="eyebrow">Pulang bawa kebiasaan baru</p>
           <h2>Tahan. Lihat. Tanya.</h2>
