@@ -1,55 +1,27 @@
 # Awas Klik — KKN ISL Gubug UKDW 2026
 
-Website statis interaktif untuk edukasi penipuan online/phishing yang ramah pengguna low vision.
+Website edukasi penipuan online/phishing dengan desain low vision friendly.
 
-## Identitas
+## Isi Project
 
-Program: **KKN ISL Gubug UKDW 2026**  
-Institusi: **Universitas Kristen Duta Wacana**  
-Topik: Edukasi keamanan digital sederhana melalui storytelling dan simulasi.
+- `index.html`
+- `styles.css`
+- `script.js`
+- `assets/logo-ukdw.png`
 
-## Fitur utama
+## Perbaikan Versi Ini
 
-- Logo UKDW sudah ditambahkan pada header dan footer.
-- Identitas **KKN ISL Gubug UKDW 2026** sudah ditampilkan.
-- Tampilan mobile diperbaiki supaya menu tidak mendorong konten terlalu jauh ke bawah.
-- Mobile navigation menggunakan drawer/dropdown ringkas yang lebih konsisten dengan tampilan desktop.
-- Hero modern dengan animasi ponsel dan scan pesan.
-- Storytelling interaktif dengan pilihan keputusan.
-- Hotspot tanda bahaya pada pesan palsu.
-- Kartu modus penipuan yang bisa ditekan.
-- Simulasi chat dengan meter risiko.
-- Link checker dan file checker sederhana.
-- Checklist sebelum klik.
-- Kartu edukasi carousel.
-- Kuis interaktif dengan skor dan feedback.
-- Tombol aksesibilitas: font besar, kontras tinggi, kurangi animasi, dan bacakan halaman.
-- Dukungan `prefers-reduced-motion` untuk pengguna sensitif terhadap animasi.
+- Tampilan desktop dan mobile dibuat lebih konsisten.
+- Tidak memakai drawer/menu panjang di mobile.
+- Navbar menjadi tombol horizontal yang bisa digeser di layar kecil.
+- Teks lebih sedikit, lebih besar, dan lebih fokus.
+- Logo UKDW ditampilkan di header dan footer.
+- Tulisan `KKN ISL Gubug UKDW 2026` ditampilkan jelas.
+- Tetap ada fitur aksesibilitas: A+, Kontras, Animasi, dan Bacakan.
 
-## Cara menjalankan
+## Cara Upload ke GitHub Pages
 
-Buka file `index.html` di browser.
-
-## Cara upload ke GitHub Pages
-
-1. Buat repository baru di GitHub.
-2. Upload semua file project ini.
-3. Masuk ke **Settings** → **Pages**.
-4. Pilih branch `main` dan folder `/root`.
-5. Simpan, lalu tunggu link GitHub Pages aktif.
-
-## Struktur file
-
-```text
-.
-├── index.html
-├── styles.css
-├── script.js
-├── README.md
-└── assets/
-    └── logo-ukdw.png
-```
-
-## Catatan aksesibilitas
-
-Desain memakai kontras tinggi, ukuran teks besar, tombol besar, navigasi sederhana, feedback tidak hanya berdasarkan warna, dan mode pengurangan animasi.
+1. Ekstrak ZIP.
+2. Upload semua file ke repository GitHub.
+3. Aktifkan GitHub Pages dari branch `main`.
+4. Buka link GitHub Pages yang muncul.

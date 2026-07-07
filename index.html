@@ -4,421 +4,235 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Awas Klik — KKN ISL Gubug UKDW 2026</title>
-    <meta
-      name="description"
-      content="Website storytelling interaktif KKN ISL Gubug UKDW 2026 untuk membantu pengguna low vision memahami tanda-tanda phishing, APK palsu, link berbahaya, OTP, dan langkah aman STOP CEK TANYA."
-    />
+    <meta name="description" content="Website edukasi phishing yang ramah low vision untuk KKN ISL Gubug UKDW 2026." />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <a class="skip-link" href="#main">Lewati ke isi utama</a>
+    <a class="skip-link" href="#main">Lewati ke konten</a>
+    <div class="reading-progress" aria-hidden="true"><span id="readingProgress"></span></div>
 
     <header class="site-header" id="top">
-      <a class="brand" href="#hero" aria-label="Kembali ke halaman awal">
-        <span class="brand-icon" aria-hidden="true">!</span>
-        <span class="brand-text">
-          <strong>Awas Klik</strong>
-          <small>Belajar aman dari penipuan online</small>
-        </span>
-      </a>
+      <div class="header-main">
+        <a class="brand" href="#hero" aria-label="Kembali ke awal halaman Awas Klik">
+          <span class="brand-icon" aria-hidden="true">!</span>
+          <span class="brand-text">
+            <strong>Awas Klik</strong>
+            <small>STOP • CEK • TANYA</small>
+          </span>
+        </a>
 
-      <div class="org-badge" aria-label="KKN ISL Gubug UKDW 2026">
-        <img src="assets/logo-ukdw.png" alt="Logo Universitas Kristen Duta Wacana" />
-        <span>
-          <strong>KKN ISL Gubug</strong>
-          <small>UKDW 2026</small>
-        </span>
-      </div>
+        <a class="ukdw-badge" href="#footer" aria-label="KKN ISL Gubug UKDW 2026">
+          <img src="assets/logo-ukdw.png" alt="Logo UKDW" width="54" height="54" />
+          <span>
+            <strong>KKN ISL Gubug</strong>
+            <small>UKDW 2026</small>
+          </span>
+        </a>
 
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navDrawer">
-        <span aria-hidden="true">☰</span>
-        Menu
-      </button>
-
-      <div class="nav-drawer" id="navDrawer">
-        <nav class="main-nav" id="mainNav" aria-label="Navigasi utama">
-          <a href="#cerita">Cerita</a>
-          <a href="#modus">Tanda Bahaya</a>
-          <a href="#simulasi">Simulasi</a>
-          <a href="#lab">Lab Aman</a>
-          <a href="#kuis">Kuis</a>
-          <a href="#darurat">Darurat</a>
-        </nav>
-
-        <div class="accessibility-tools" aria-label="Alat bantu aksesibilitas">
-          <button type="button" class="tool-btn" id="fontUpBtn" aria-pressed="false">A+</button>
-          <button type="button" class="tool-btn" id="contrastBtn" aria-pressed="false">Kontras</button>
-          <button type="button" class="tool-btn" id="motionBtn" aria-pressed="false">Kurangi animasi</button>
-          <button type="button" class="tool-btn speak" id="speakBtn">Bacakan</button>
+        <div class="tools" aria-label="Alat bantu aksesibilitas">
+          <button class="tool-btn" type="button" id="fontBtn" aria-pressed="false">A+</button>
+          <button class="tool-btn" type="button" id="contrastBtn" aria-pressed="false">Kontras</button>
+          <button class="tool-btn" type="button" id="motionBtn" aria-pressed="false">Animasi</button>
+          <button class="tool-btn" type="button" id="speakBtn">Bacakan</button>
         </div>
       </div>
+
+      <nav class="main-nav" aria-label="Navigasi utama">
+        <a href="#cerita">Cerita</a>
+        <a href="#bahaya">Bahaya</a>
+        <a href="#simulasi">Simulasi</a>
+        <a href="#cek">Cek Aman</a>
+        <a href="#kuis">Kuis</a>
+        <a href="#darurat">Darurat</a>
+      </nav>
     </header>
 
-    <div class="page-progress" aria-hidden="true"><span id="pageProgress"></span></div>
-
     <main id="main">
-      <section class="hero" id="hero">
-        <div class="hero-copy reveal">
-          <p class="eyebrow">KKN ISL Gubug UKDW 2026 • Storytelling interaktif untuk low vision</p>
-          <h1>Awas Klik: belajar mengenali penipuan online dengan cara yang lebih mudah dipahami.</h1>
-          <p class="lead">
-            Program edukasi digital KKN ISL Gubug UKDW 2026. Ikuti cerita, tekan tanda bahaya, pilih keputusan, dan lihat langsung kenapa sebuah pesan bisa aman atau berisiko.
-          </p>
+      <section class="hero section-shell" id="hero" aria-labelledby="heroTitle">
+        <div class="hero-text reveal">
+          <p class="eyebrow"><span></span> KKN ISL Gubug UKDW 2026</p>
+          <h1 id="heroTitle">Tahan. Lihat. Tanya.</h1>
+          <p class="lead">Belajar mengenali penipuan online dengan tampilan besar, jelas, dan mudah dibaca.</p>
+
           <div class="hero-actions">
             <a class="btn primary" href="#simulasi">Mulai simulasi</a>
-            <a class="btn secondary" href="#rumus">Lihat rumus aman</a>
+            <a class="btn secondary" href="#darurat">Butuh bantuan?</a>
           </div>
 
-          <div class="mission-panel" aria-label="Progress belajar">
-            <div class="mission-head">
-              <strong>Misi belajar hari ini</strong>
-              <span id="missionText">0/6 selesai</span>
-            </div>
-            <div class="mission-track" aria-hidden="true"><span id="missionFill"></span></div>
-            <ul class="mission-list">
-              <li data-mission-item="cerita">Ikuti cerita</li>
-              <li data-mission-item="modus">Temukan red flag</li>
-              <li data-mission-item="chat">Ambil keputusan aman</li>
-              <li data-mission-item="link">Cek link/file</li>
-              <li data-mission-item="kuis">Selesaikan kuis</li>
-              <li data-mission-item="darurat">Baca langkah darurat</li>
-            </ul>
+          <div class="rule-strip" aria-label="Rumus aman">
+            <div><strong>1</strong><span>Tahan dulu</span></div>
+            <div><strong>2</strong><span>Cek pesan</span></div>
+            <div><strong>3</strong><span>Tanya orang terpercaya</span></div>
           </div>
         </div>
 
-        <div class="hero-stage reveal" aria-label="Ilustrasi ponsel dengan pesan mencurigakan" role="img">
-          <div class="orb orb-a" aria-hidden="true"></div>
-          <div class="orb orb-b" aria-hidden="true"></div>
-          <div class="phone hero-phone">
-            <div class="phone-bar" aria-hidden="true"></div>
-            <div class="phone-screen">
-              <div class="scan-beam" aria-hidden="true"></div>
-              <div class="app-top">
-                <span class="status-dot danger"></span>
-                <strong>Pesan Baru</strong>
-              </div>
-              <div class="message-bubble danger-bubble pop-one">
+        <div class="phone-wrap reveal" aria-label="Ilustrasi pesan mencurigakan" role="img">
+          <div class="phone">
+            <div class="speaker" aria-hidden="true"></div>
+            <div class="screen">
+              <div class="scan-line" aria-hidden="true"></div>
+              <div class="message danger-message">
                 <small>Nomor tidak dikenal</small>
-                <p>Undangan Nikah.apk</p>
+                <strong>Undangan Nikah.apk</strong>
               </div>
-              <div class="message-bubble warning-bubble pop-two">
-                <small>Hadiah cepat</small>
-                <p>Klik link sekarang!</p>
+              <div class="message warning-message">
+                <small>Pesan mendesak</small>
+                <strong>Klik sekarang!</strong>
               </div>
-              <div class="message-bubble safe-bubble pop-three">
-                <small>Rumus aman</small>
-                <p>STOP • CEK • TANYA</p>
+              <div class="message safe-message">
+                <small>Langkah aman</small>
+                <strong>STOP • CEK • TANYA</strong>
               </div>
             </div>
           </div>
-          <span class="float-label label-one">APK?</span>
-          <span class="float-label label-two">OTP?</span>
-          <span class="float-label label-three">CEK DULU</span>
+          <span class="bubble-tag tag-one">APK?</span>
+          <span class="bubble-tag tag-two">OTP?</span>
+          <span class="bubble-tag tag-three">CEK DULU</span>
         </div>
       </section>
 
-      <section class="quick-rule reveal" id="rumus" aria-label="Rumus aman">
-        <div class="rule-card">
-          <span class="rule-number">1</span>
-          <strong>STOP</strong>
-          <p>Berhenti sebentar. Jangan panik dan jangan langsung klik.</p>
-        </div>
-        <div class="rule-card">
-          <span class="rule-number">2</span>
-          <strong>CEK</strong>
-          <p>Periksa pengirim, link, jenis file, dan bahasa pesan.</p>
-        </div>
-        <div class="rule-card">
-          <span class="rule-number">3</span>
-          <strong>TANYA</strong>
-          <p>Konfirmasi ke orang terpercaya atau kanal resmi.</p>
-        </div>
-      </section>
-
-      <section class="section story-section" id="cerita">
+      <section class="section-shell compact-section" id="cerita" aria-labelledby="ceritaTitle">
         <div class="section-heading reveal">
-          <p class="eyebrow">Bab 1 — Cerita interaktif</p>
-          <h2>Pilih jalan cerita: apa yang harus dilakukan Sari?</h2>
-          <p>
-            Sari menerima pesan mencurigakan. Setiap pilihan akan mengubah hasil cerita dan memberi penjelasan sederhana.
-          </p>
+          <p class="eyebrow"><span></span> Cerita singkat</p>
+          <h2 id="ceritaTitle">Sari mendapat pesan aneh.</h2>
+          <p>Tekan pilihan. Lihat akibatnya langsung.</p>
         </div>
 
-        <div class="story-board reveal">
-          <div class="story-visual" aria-hidden="true">
-            <div class="character-card sari">
-              <span class="face">🙂</span>
-              <strong>Sari</strong>
-              <small>Pengguna HP</small>
-            </div>
-            <div class="story-arrow">→</div>
-            <div class="phone mini-phone">
-              <div class="phone-bar"></div>
-              <div class="mini-screen">
-                <strong id="storySender">Nomor baru</strong>
-                <p id="storyMessage">Bu, ini undangan nikah saya. Buka file Undangan Nikah.apk ya.</p>
-              </div>
-            </div>
+        <div class="story-card reveal">
+          <div class="story-message" aria-live="polite">
+            <small id="storyStep">Langkah 1 dari 3</small>
+            <h3 id="storyQuestion">Ada file “Undangan Nikah.apk”. Apa yang paling aman?</h3>
+            <p id="storyFeedback">Pilih satu jawaban untuk memulai cerita.</p>
           </div>
-
-          <div class="choice-panel">
-            <p class="choice-label" id="storyStep">Langkah 1 dari 3</p>
-            <h3 id="storyQuestion">Apa keputusan paling aman?</h3>
-            <div class="choice-grid" id="storyChoices"></div>
-            <div class="feedback-card" id="storyFeedback" aria-live="polite">
-              Pilih salah satu keputusan untuk melihat akibatnya.
-            </div>
-          </div>
+          <div class="choice-grid" id="storyChoices"></div>
         </div>
       </section>
 
-      <section class="section" id="modus">
+      <section class="section-shell compact-section" id="bahaya" aria-labelledby="bahayaTitle">
         <div class="section-heading reveal">
-          <p class="eyebrow">Bab 2 — Tanda bahaya</p>
-          <h2>Tekan area yang mencurigakan pada pesan.</h2>
-          <p>
-            Bagian yang berbahaya diberi tombol besar agar mudah ditekan. Penjelasan muncul di samping pesan.
-          </p>
+          <p class="eyebrow"><span></span> Tanda bahaya</p>
+          <h2 id="bahayaTitle">Tekan bagian mencurigakan.</h2>
+          <p>Setiap kotak menjelaskan risiko dengan bahasa sederhana.</p>
         </div>
 
-        <div class="anatomy-grid">
-          <article class="big-message reveal">
-            <div class="message-header">
-              <span class="avatar">?</span>
-              <div>
-                <strong>Nomor Tidak Dikenal</strong>
-                <small>+62 812-0000-XXXX</small>
-              </div>
-            </div>
+        <div class="danger-layout reveal">
+          <article class="big-chat">
+            <div class="sender"><strong>Nomor Baru</strong><span>+62 812-0000-XXXX</span></div>
             <p>
-              Selamat! Akun Anda mendapat bantuan dana.
-              <button type="button" class="hotspot" data-hotspot="Hadiah atau bantuan mendadak sering dipakai untuk menarik perhatian. Jangan percaya sebelum cek kanal resmi.">Dapat bantuan Rp5.000.000</button>
-              Silakan klik
-              <button type="button" class="hotspot" data-hotspot="Link pendek atau alamat tidak jelas membuat kita sulit tahu tujuan aslinya. Buka hanya alamat resmi yang diketik sendiri.">bit.ly/bantuan-cepat</button>
-              dan masukkan
-              <button type="button" class="hotspot" data-hotspot="OTP adalah kunci akun. Bank, polisi, kurir, dan panitia tidak boleh meminta kode OTP.">kode OTP</button>
-              dalam 5 menit.
+              Selamat! Anda mendapat hadiah. Klik
+              <button class="hotspot" type="button" data-info="Link pendek bisa menyembunyikan alamat asli. Jangan klik sebelum cek sumber resmi.">bit.ly/hadiah-cepat</button>
+              lalu masukkan
+              <button class="hotspot" type="button" data-info="OTP adalah kunci akun. Jangan berikan ke siapa pun, termasuk orang yang mengaku petugas.">kode OTP</button>
+              dalam
+              <button class="hotspot" type="button" data-info="Batas waktu palsu dipakai agar korban panik dan tidak sempat berpikir.">5 menit</button>.
             </p>
           </article>
 
-          <aside class="explain-panel reveal" id="hotspotExplain" aria-live="polite">
-            <span class="panel-icon">👀</span>
-            <h3>Temukan red flag</h3>
-            <p>Tekan teks yang diberi kotak. Penjelasannya akan muncul di sini.</p>
+          <aside class="info-box" id="hotspotInfo" aria-live="polite">
+            <strong>Penjelasan muncul di sini.</strong>
+            <p>Tekan kotak berwarna kuning pada pesan.</p>
           </aside>
         </div>
-
-        <div class="flip-grid" aria-label="Kartu modus penipuan">
-          <button type="button" class="flip-card reveal" data-card="File APK bisa memasang aplikasi berbahaya. Jangan buka APK dari WhatsApp/SMS kecuali dari sumber resmi.">
-            <span>📄</span>
-            <strong>APK palsu</strong>
-            <small>Tekan untuk penjelasan</small>
-          </button>
-          <button type="button" class="flip-card reveal" data-card="Penipu membuat korban merasa harus cepat bertindak. Semakin mendesak, semakin perlu berhenti dulu.">
-            <span>⏰</span>
-            <strong>Diburu waktu</strong>
-            <small>Tekan untuk penjelasan</small>
-          </button>
-          <button type="button" class="flip-card reveal" data-card="Jangan percaya nomor baru yang mengaku keluarga. Telepon nomor lama atau tanya keluarga lain.">
-            <span>👨‍👩‍👧</span>
-            <strong>Nomor keluarga palsu</strong>
-            <small>Tekan untuk penjelasan</small>
-          </button>
-          <button type="button" class="flip-card reveal" data-card="Link palsu sering mirip nama bank, ekspedisi, atau instansi. Perhatikan ejaan, domain, dan sumber pesan.">
-            <span>🔗</span>
-            <strong>Link tiruan</strong>
-            <small>Tekan untuk penjelasan</small>
-          </button>
-        </div>
-
-        <div class="toast-card reveal" id="cardExplain" aria-live="polite">
-          Tekan salah satu kartu modus untuk membuka penjelasan.
-        </div>
       </section>
 
-      <section class="section simulator-section" id="simulasi">
+      <section class="section-shell compact-section" id="simulasi" aria-labelledby="simTitle">
         <div class="section-heading reveal">
-          <p class="eyebrow">Bab 3 — Simulasi keputusan</p>
-          <h2>Rasakan sendiri alur chat penipuan.</h2>
-          <p>
-            Pilih respons yang paling aman. User akan belajar dari feedback langsung, bukan hanya membaca teori.
-          </p>
+          <p class="eyebrow"><span></span> Simulasi</p>
+          <h2 id="simTitle">Apa keputusanmu?</h2>
+          <p>Pilih tindakan, lalu lihat tingkat risikonya.</p>
         </div>
 
-        <div class="simulator-grid">
-          <div class="phone sim-phone reveal">
-            <div class="phone-bar"></div>
-            <div class="sim-header">
-              <span class="avatar small">?</span>
-              <div>
-                <strong id="chatSender">Nomor tidak dikenal</strong>
-                <small>online</small>
-              </div>
+        <div class="sim-grid reveal">
+          <div class="chat-sim">
+            <div class="chat-bubble suspicious">
+              <small>WA tidak dikenal</small>
+              <p>Bu, paket gagal dikirim. Buka file Resi_Paket.apk.</p>
             </div>
-            <div class="chat-area" id="chatArea" aria-live="polite"></div>
-            <div class="typing-indicator" aria-hidden="true"><span></span><span></span><span></span></div>
+            <div class="risk-meter" aria-label="Meter risiko">
+              <span>Risiko</span>
+              <div><i id="riskFill"></i></div>
+              <strong id="riskText">Belum dipilih</strong>
+            </div>
           </div>
 
-          <div class="sim-control reveal">
-            <h3>Bagaimana responsmu?</h3>
-            <div class="response-grid" id="responseGrid"></div>
-            <div class="risk-meter" aria-label="Tingkat risiko">
-              <div class="risk-top">
-                <strong>Meter Risiko</strong>
-                <span id="riskLabel">Belum dinilai</span>
-              </div>
-              <div class="risk-track"><span id="riskFill"></span></div>
-            </div>
-            <div class="feedback-card" id="chatFeedback" aria-live="polite">
-              Pilih respons untuk melihat apakah keputusanmu aman.
-            </div>
-            <button type="button" class="btn secondary wide" id="nextChatBtn">Pesan berikutnya</button>
+          <div class="sim-actions">
+            <button class="decision-btn" type="button" data-risk="90" data-message="Sangat berisiko. File APK dari orang tidak dikenal bisa mencuri data dan akun.">Buka file</button>
+            <button class="decision-btn" type="button" data-risk="70" data-message="Masih berisiko. Membalas bisa membuat penipu tahu nomor aktif.">Balas pesan</button>
+            <button class="decision-btn good" type="button" data-risk="10" data-message="Pilihan aman. Hapus pesan, blokir nomor, lalu tanya ke kanal resmi.">Hapus & blokir</button>
           </div>
         </div>
       </section>
 
-      <section class="section lab-section" id="lab">
+      <section class="section-shell compact-section" id="cek" aria-labelledby="cekTitle">
         <div class="section-heading reveal">
-          <p class="eyebrow">Bab 4 — Lab Aman</p>
-          <h2>Cek link dan file dengan cara sederhana.</h2>
-          <p>
-            Masukkan contoh link atau nama file. Sistem akan memberi tanda risiko dengan penjelasan yang mudah dipahami.
-          </p>
+          <p class="eyebrow"><span></span> Cek aman</p>
+          <h2 id="cekTitle">Cek sebelum klik.</h2>
+          <p>Masukkan contoh link atau nama file. Hasilnya hanya panduan sederhana.</p>
         </div>
 
-        <div class="lab-grid">
-          <article class="lab-card reveal">
-            <span class="lab-icon">🔗</span>
-            <h3>Link Checker</h3>
-            <label for="linkInput">Ketik contoh link</label>
-            <input id="linkInput" type="text" value="bit.ly/hadiah-cepat" autocomplete="off" />
-            <button type="button" class="btn primary wide" id="checkLinkBtn">Cek link</button>
-            <div class="result-box" id="linkResult" aria-live="polite">Hasil cek link akan muncul di sini.</div>
-          </article>
+        <div class="checker-grid reveal">
+          <label class="checker-box">
+            <span>Cek link</span>
+            <input id="linkInput" type="text" placeholder="contoh: bit.ly/hadiah" autocomplete="off" />
+            <button class="btn primary" type="button" id="linkBtn">Cek link</button>
+            <output id="linkResult">Hasil cek link akan muncul di sini.</output>
+          </label>
 
-          <article class="lab-card reveal">
-            <span class="lab-icon">📁</span>
-            <h3>File Checker</h3>
-            <label for="fileInput">Ketik nama file</label>
-            <input id="fileInput" type="text" value="Undangan Nikah.apk" autocomplete="off" />
-            <button type="button" class="btn primary wide" id="checkFileBtn">Cek file</button>
-            <div class="result-box" id="fileResult" aria-live="polite">Hasil cek file akan muncul di sini.</div>
-          </article>
-
-          <article class="lab-card checklist reveal">
-            <span class="lab-icon">✅</span>
-            <h3>Checklist sebelum klik</h3>
-            <label><input type="checkbox" class="safe-check" /> Saya kenal pengirimnya.</label>
-            <label><input type="checkbox" class="safe-check" /> Link berasal dari website resmi.</label>
-            <label><input type="checkbox" class="safe-check" /> Tidak ada permintaan OTP/PIN.</label>
-            <label><input type="checkbox" class="safe-check" /> Saya sudah tanya orang terpercaya.</label>
-            <div class="result-box" id="checklistResult" aria-live="polite">Centang checklist untuk melihat rekomendasi.</div>
-          </article>
+          <label class="checker-box">
+            <span>Cek file</span>
+            <input id="fileInput" type="text" placeholder="contoh: undangan.apk" autocomplete="off" />
+            <button class="btn primary" type="button" id="fileBtn">Cek file</button>
+            <output id="fileResult">Hasil cek file akan muncul di sini.</output>
+          </label>
         </div>
       </section>
 
-      <section class="section carousel-section reveal" aria-label="Galeri edukasi visual">
-        <div class="section-heading">
-          <p class="eyebrow">Bab 5 — Visual cepat</p>
-          <h2>Geser kartu edukasi.</h2>
-          <p>Kartu besar dengan teks ringkas membantu user memahami poin utama tanpa terlalu banyak membaca.</p>
-        </div>
-        <div class="carousel-wrap">
-          <button type="button" class="carousel-btn" id="prevSlide" aria-label="Kartu sebelumnya">‹</button>
-          <div class="carousel" id="carousel" aria-live="polite"></div>
-          <button type="button" class="carousel-btn" id="nextSlide" aria-label="Kartu berikutnya">›</button>
-        </div>
-      </section>
-
-      <section class="section quiz-section" id="kuis">
+      <section class="section-shell compact-section" id="kuis" aria-labelledby="quizTitle">
         <div class="section-heading reveal">
-          <p class="eyebrow">Bab 6 — Kuis singkat</p>
-          <h2>Uji pemahaman dengan kuis cepat.</h2>
-          <p>Jawab setiap kasus. Penjelasan muncul langsung setelah memilih jawaban.</p>
+          <p class="eyebrow"><span></span> Kuis cepat</p>
+          <h2 id="quizTitle">Pilih jawaban aman.</h2>
+          <p>Skor muncul langsung setelah memilih.</p>
         </div>
 
         <div class="quiz-card reveal">
           <div class="quiz-top">
-            <span id="quizCount">Soal 1 dari 5</span>
-            <strong>Skor: <span id="quizScore">0</span></strong>
+            <strong id="quizQuestion">Memuat pertanyaan...</strong>
+            <span id="quizScore">Skor 0</span>
           </div>
-          <p class="quiz-question" id="quizQuestion">Memuat soal...</p>
-          <div class="quiz-actions">
-            <button type="button" class="btn primary" data-quiz-answer="scam">Penipuan</button>
-            <button type="button" class="btn secondary" data-quiz-answer="safe">Lebih aman</button>
-          </div>
-          <div class="feedback-card" id="quizFeedback" aria-live="polite">Pilih jawaban.</div>
-          <button type="button" class="btn ghost wide" id="restartQuizBtn">Ulangi kuis</button>
+          <div class="choice-grid" id="quizChoices"></div>
+          <p class="quiz-feedback" id="quizFeedback" aria-live="polite">Jawab pertanyaan pertama.</p>
         </div>
       </section>
 
-      <section class="section emergency-section" id="darurat">
-        <div class="section-heading reveal">
-          <p class="eyebrow">Bab 7 — Saat terlanjur klik</p>
-          <h2>Jangan panik. Lakukan langkah darurat ini.</h2>
-          <p>
-            Bagian ini dibuat besar dan jelas agar mudah dibaca saat kondisi mendesak.
-          </p>
-        </div>
-
-        <div class="emergency-grid">
-          <article class="emergency-card reveal">
-            <span>1</span>
-            <h3>Putus koneksi</h3>
-            <p>Matikan data internet atau Wi-Fi supaya aplikasi berbahaya tidak mudah mengirim data.</p>
-          </article>
-          <article class="emergency-card reveal">
-            <span>2</span>
-            <h3>Ganti password</h3>
-            <p>Ganti password akun penting dari perangkat lain yang aman.</p>
-          </article>
-          <article class="emergency-card reveal">
-            <span>3</span>
-            <h3>Hubungi bank/operator</h3>
-            <p>Blokir akses jika ada risiko rekening, dompet digital, atau nomor HP disalahgunakan.</p>
-          </article>
-          <article class="emergency-card reveal">
-            <span>4</span>
-            <h3>Minta bantuan</h3>
-            <p>Hubungi keluarga, admin resmi, atau pihak berwenang. Jangan tangani sendiri kalau ragu.</p>
-          </article>
+      <section class="section-shell final-section" id="darurat" aria-labelledby="daruratTitle">
+        <div class="final-card reveal">
+          <p class="eyebrow"><span></span> Langkah darurat</p>
+          <h2 id="daruratTitle">Kalau sudah terlanjur klik.</h2>
+          <div class="emergency-list">
+            <div><strong>1</strong><span>Matikan internet.</span></div>
+            <div><strong>2</strong><span>Ganti password.</span></div>
+            <div><strong>3</strong><span>Hubungi bank atau pihak resmi.</span></div>
+            <div><strong>4</strong><span>Ceritakan ke keluarga/guru/petugas.</span></div>
+          </div>
+          <a class="btn primary" href="#top">Kembali ke atas</a>
         </div>
       </section>
     </main>
 
-    <footer class="site-footer">
+    <button class="help-float" type="button" id="helpBtn">Butuh petunjuk?</button>
+
+    <footer class="site-footer" id="footer">
       <div class="footer-brand">
-        <img src="assets/logo-ukdw.png" alt="Logo Universitas Kristen Duta Wacana" />
+        <img src="assets/logo-ukdw.png" alt="Logo UKDW" width="76" height="76" />
         <div>
           <strong>KKN ISL Gubug UKDW 2026</strong>
-          <p>Website edukasi interaktif “Awas Klik” untuk membantu masyarakat belajar aman dari penipuan online.</p>
+          <p>Website edukasi “Awas Klik” untuk membantu masyarakat mengenali penipuan online.</p>
         </div>
       </div>
-      <div>
-        <strong>Awas Klik</strong>
-        <p>Storytelling modern, interaktif, aksesibel, dan ramah pengguna low vision.</p>
-      </div>
-      <div>
-        <strong>Prinsip aksesibilitas</strong>
-        <p>Kontras tinggi, ukuran teks besar, tombol besar, navigasi jelas, dan dukungan reduced motion.</p>
-      </div>
-      <div>
-        <strong>Kontak</strong>
-        <p>KKN ISL Gubug UKDW 2026<br />Universitas Kristen Duta Wacana</p>
-      </div>
+      <p class="footer-note">Didesain dengan prinsip low vision: teks besar, kontras tinggi, tombol lebar, jarak lega, dan opsi kurangi animasi.</p>
     </footer>
 
-    <div class="floating-help" aria-live="polite">
-      <button type="button" id="coachBtn" class="coach-btn">Butuh petunjuk?</button>
-      <div class="coach-box" id="coachBox" hidden>
-        <strong>Tips cepat:</strong>
-        <p>Mulai dari cerita, lalu coba simulasi chat. Tekan tombol besar berwarna ungu/biru untuk berinteraksi.</p>
-      </div>
-    </div>
-
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
-    <div class="confetti" id="confetti" aria-hidden="true"></div>
-
     <script src="script.js"></script>
   </body>
 </html>
