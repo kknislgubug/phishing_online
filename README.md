@@ -18,3 +18,9 @@ Perbaikan utama:
 
 
 Catatan revisi: fitur Cek Link sudah dihapus. Bagian yang tersisa adalah Cek File sederhana.
+
+
+## Update v9
+- Animasi jawaban benar pada Simulasi, Cerita, Kuis, dan Cek File.
+- Efek confetti, glow hijau, badge Aman, meter risiko animatif, dan toast sukses.
+- Tetap menghormati prefers-reduced-motion untuk aksesibilitas.
